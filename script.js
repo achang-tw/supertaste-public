@@ -6,12 +6,6 @@ const coupons = [
 			"href": "https://supertaste.tvbs.com.tw/food/353033"
 		},
 		{
-			"title": "金田屋大福飲品，優惠活動",
-			"txt": "金田屋大福飲品，買一送一，優惠活動，立即參加！",
-			"date": "02/24 開始",
-			"href": "https://supertaste.tvbs.com.tw/food/353033"
-		},
-		{
 			"title": "金田屋大福飲品，限定日期買一送一",
 			"txt": "金田屋大福飲品，買一送一，限定日期，不要錯過！",
 			"date": "02/24 開始",
@@ -78,14 +72,14 @@ const coupons = [
 						interval: 3000,
 						pagination: false,
 						arrows: false,
-						perPage: 2,
+						perPage: 1,
 						height: 105,
 						gap: 16,
-						breakpoints: {
-							480: {
-								perPage: 1,
-							},
-						},
+						// breakpoints: {
+						// 	480: {
+						// 		perPage: 1,
+						// 	},
+						// },
 					}).mount();
 				}
 			}
