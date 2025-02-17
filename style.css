@@ -1,18 +1,21 @@
 .supertaste-coupon .coupon-list{
-		position: relative;
-	}
-	.supertaste-coupon .coupon-item{
-		display: flex;
-		justify-content: center;
-	}
-	.supertaste-coupon .coupon-item-wrap{
-		display: flex;
-		gap: 10px;
-	}
-	.supertaste-coupon .coupon-item-img{
-		width: 40%;
-		background-position: center;
-		background-size: cover;
-		flex-shrink: 0;
-		border-radius: 4px;
-	}
+	position: relative;
+}
+.supertaste-coupon .coupon-item{
+	display: flex;
+	justify-content: center;
+}
+.supertaste-coupon .coupon-item-wrap{
+	display: flex;
+	gap: 10px;
+}
+.supertaste-coupon .coupon-item-img{
+	width: 40%;
+	background-position: center;
+	background-size: cover;
+	flex-shrink: 0;
+	border-radius: 4px;
+}
+.supertaste-coupon .coupon-item-wrap img{
+	max-height: 100%;
+}
