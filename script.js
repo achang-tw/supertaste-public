@@ -66,14 +66,14 @@ const SuperCoupon = {
 			var xpath = this.getXPath(targetElement);
 	
 			var element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-			element.insertAdjacentHTML('afterend', await this.baseElement());
+			element.after(await this.baseElement());
 		}else{
 			var xpath = this.getXPath('main');
 			var element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-			element.insertAdjacentHTML('beforebegin', await this.baseElement());
+			element.prepend(await this.baseElement());
 		}
 	},
-	baseElement() {
+	async baseElement() {
 		const base = document.createElement('div');
 		base.classList.add('supertaste-coupon', 'splide');
 		base.style.height = '105px';
