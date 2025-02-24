@@ -73,7 +73,7 @@ const SuperCoupon = {
 			element.insertAdjacentHTML('beforebegin', await this.baseElement());
 		}
 	},
-	async baseElement() {
+	baseElement() {
 		const base = document.createElement('div');
 		base.classList.add('supertaste-coupon', 'splide');
 		base.style.height = '105px';
