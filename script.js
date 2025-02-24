@@ -22,9 +22,13 @@ const SuperCoupon = {
 	async init(){
 		await new Promise(resolve => setTimeout(resolve, 1000));
 
-		await this.addBaseElement();
-		await this.loadStyles();
-		await this.loadCoupons();
+		try{
+			await this.addBaseElement();
+			await this.loadStyles();
+			await this.loadCoupons();
+		}catch(e){
+			console.error('loaded coupons failed!', e);
+		}
 	},
 	getXPath(element) {
 		if (element.id !== '') {
