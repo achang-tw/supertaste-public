@@ -19,3 +19,6 @@
 .supertaste-coupon .coupon-item-wrap img{
 	max-height: 100%;
 }
+.supertaste-coupon .coupon-item-wrap.no-img{
+	align-items: center;
+}
