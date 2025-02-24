@@ -143,14 +143,9 @@ const SuperCoupon = {
 						interval: 3000,
 						pagination: false,
 						arrows: false,
-						perPage: 2,
+						perPage: 1,
 						height: 105,
 						gap: 16,
-						breakpoints: {
-							480: {
-								perPage: 1,
-							},
-						},
 					}).mount();
 				}
 			}
