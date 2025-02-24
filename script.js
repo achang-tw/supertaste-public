@@ -51,7 +51,7 @@ const SuperCoupon = {
 		await this.loadStyles();
 		await this.loadCoupons();
 	},
-	async getXPath(element) {
+	getXPath(element) {
 		if (element.id !== '') {
 			return `//*[@id="${element.id}"]`;
 		}
