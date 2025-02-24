@@ -97,12 +97,21 @@ const SuperCoupon = {
 								<div><a href="${coupon.href}" target="_blank"><img src="${coupon.cover}" alt="${coupon.title}"></a></div>
 							</div>
 						</div>`
-					} else {
-						const img = coupon.img;
+					} else if(coupon.img) {
 						coupon = `<div class="coupon-item splide__slide">
-							<div class="coupon-item-wrap">` + 
-								(img ? `<div class="coupon-item-img" style="background-image:url(${img})"></div>` : '') +
-								`<div class="coupon-item-content">
+							<div class="coupon-item-wrap">
+								<div class="coupon-item-img" style="background-image:url(${coupon.img})"></div>
+								<div class="coupon-item-content">
+									<div><a href="${coupon.href}" target="_blank">${coupon.title}</a></div>
+									<div>${coupon.txt}</div>
+									<div>${coupon.date}</div>
+								</div>
+							</div>
+						</div>`;
+					}else{
+						coupon = `<div class="coupon-item splide__slide">
+							<div class="coupon-item-wrap no-img">
+								<div class="coupon-item-content">
 									<div><a href="${coupon.href}" target="_blank">${coupon.title}</a></div>
 									<div>${coupon.txt}</div>
 									<div>${coupon.date}</div>
