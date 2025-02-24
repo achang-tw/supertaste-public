@@ -28,26 +28,7 @@ const SuperCoupon = {
 	async init(){
 		await new Promise(resolve => setTimeout(resolve, 1000));
 
-		const targets = ['header', 'h1'];
-		var target = null;
-		for(let i = 0; i < targets.length; i++){
-			if(document.querySelector(targets[i])){
-				target = targets[i];
-				break;
-			}
-		}
-		if(target){
-			var targetElement = document.querySelector(target);
-			var xpath = this.getXPath(targetElement);
-	
-			var element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-			element.insertAdjacentHTML('afterend', await this.baseElement());
-		}else{
-			var xpath = this.getXPath('main');
-			var element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-			element.insertAdjacentHTML('beforebegin', await this.baseElement());
-		}
-
+		await this.addBaseElement();
 		await this.loadStyles();
 		await this.loadCoupons();
 	},
@@ -69,6 +50,27 @@ const SuperCoupon = {
 			if (sibling.nodeType === 1 && sibling.tagName === element.tagName) {
 				ix++;
 			}
+		}
+	},
+	async addBaseElement(){
+		const targets = ['header', 'h1'];
+		var target = null;
+		for(let i = 0; i < targets.length; i++){
+			if(document.querySelector(targets[i])){
+				target = targets[i];
+				break;
+			}
+		}
+		if(target){
+			var targetElement = document.querySelector(target);
+			var xpath = this.getXPath(targetElement);
+	
+			var element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+			element.insertAdjacentHTML('afterend', await this.baseElement());
+		}else{
+			var xpath = this.getXPath('main');
+			var element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+			element.insertAdjacentHTML('beforebegin', await this.baseElement());
 		}
 	},
 	async baseElement() {
