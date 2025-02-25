@@ -92,7 +92,7 @@ const SuperCoupon = {
 		document.head.appendChild(link);
 	},
 	async loadCoupons(){
-		fetch('https://ads.achang.tw/super-coupon', , {
+		fetch('https://ads.achang.tw/super-coupon', {
 		  redirect: 'follow'
 		}).then(res => res.json()).then(data => {
 			console.log(data);
