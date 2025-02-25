@@ -92,6 +92,9 @@ const SuperCoupon = {
 		document.head.appendChild(link);
 	},
 	async loadCoupons(){
+		fetch('https://ads.achang.tw/super-coupon').then(res => res.json()).then(data => {
+			console.log(data);
+		});
 		const promises = Array.from(document.querySelectorAll('.supertaste-coupon .coupon-list')).map(container => {
 			return new Promise(resolve => {
 				container.innerHTML = this.coupons.map(coupon => {
