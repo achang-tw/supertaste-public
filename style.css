@@ -1,3 +1,9 @@
+.supertaste-coupon{
+    height: 105px;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .supertaste-coupon .coupon-list{
 	position: relative;
 }
