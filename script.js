@@ -92,9 +92,7 @@ const SuperCoupon = {
 		document.head.appendChild(link);
 	},
 	async loadCoupons(){
-		fetch('https://ads.achang.tw/super-coupon', {
-		  redirect: 'follow'
-		}).then(res => res.json()).then(data => {
+		fetch('https://ads.achang.tw/super-coupon/index.php').then(res => res.json()).then(data => {
 			console.log(data);
 		});
 		const promises = Array.from(document.querySelectorAll('.supertaste-coupon .coupon-list')).map(container => {
