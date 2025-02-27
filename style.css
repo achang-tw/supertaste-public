@@ -29,6 +29,7 @@
 	align-items: center;
 }
 .supertaste-coupon .coupon-item-wrap .coupon-item-content{
+	display: flex;
 	align-items: center;
 }
 .supertaste-coupon .cta-wrap{
