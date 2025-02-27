@@ -96,13 +96,11 @@ const SuperCoupon = {
 													</div>
 												</div>
 											</div>
-											<div class="coupon-item-right">
-												<div class="coupon-item-cta">
-													<div class="cta-wrap">
-														<div class="cta-title">${coupon.cta_title}</div>
-														<div class="cta-info">${coupon.cta_info}</div>
-														<div class="cta-btn">${coupon.cta_btn}</div>
-													</div>
+											<div class="coupon-item-cta">
+												<div class="cta-wrap">
+													<div class="cta-title">${coupon.cta_title}</div>
+													<div class="cta-info">${coupon.cta_info}</div>
+													<div class="cta-btn">${coupon.cta_btn}</div>
 												</div>
 											</div>
 										</div>
