@@ -18,11 +18,16 @@
 .supertaste-coupon .coupon-item-left{
 	display: flex;
 }
-.supertaste-coupon .coupon-item-img{
+.supertaste-coupon .coupon-item-img-wrap{
 	width: 40%;
+	flex-shrink: 0;
+	position: relative;
+}
+.supertaste-coupon .coupon-item-img{
+	width: 100%;
+	height: 100%;
 	background-position: center;
 	background-size: cover;
-	flex-shrink: 0;
 	border-radius: 4px;
 }
 .supertaste-coupon .coupon-item-wrap img{
