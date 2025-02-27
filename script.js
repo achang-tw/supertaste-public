@@ -92,10 +92,12 @@ const SuperCoupon = {
 													<div><a href="${coupon.info_link}" target="_blank">查看店家資訊</a></div>
 												</div>
 											</div>
-											<div class="cta-wrap">
-												<div class="cta-title">${coupon.cta_title}</div>
-												<div class="cta-info">${coupon.cta_info}</div>
-												<div class="cta-btn">${coupon.cta_btn}</div>
+											<div class="coupon-item-cta">
+												<div class="cta-wrap">
+													<div class="cta-title">${coupon.cta_title}</div>
+													<div class="cta-info">${coupon.cta_info}</div>
+													<div class="cta-btn">${coupon.cta_btn}</div>
+												</div>
 											</div>
 										</div>
 									</div>`;
