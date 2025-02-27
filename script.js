@@ -85,7 +85,9 @@ const SuperCoupon = {
 									coupon = `<div class="coupon-item splide__slide">
 										<div class="coupon-item-wrap">
 											<div class="coupon-item-left">
-												<div class="coupon-item-img" style="background-image:url(${coupon.image})"></div>
+												<div>
+													<div class="coupon-item-img" style="background-image:url(${coupon.image})"></div>
+												</div>
 												<div class="coupon-item-content">
 													<div class="coupon-item-content-wrap">
 														<div><a href="${coupon.link}" target="_blank">${coupon.title}</a></div>
