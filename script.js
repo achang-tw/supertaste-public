@@ -86,9 +86,11 @@ const SuperCoupon = {
 										<div class="coupon-item-wrap">
 											<div class="coupon-item-img" style="background-image:url(${coupon.image})"></div>
 											<div class="coupon-item-content">
-												<div><a href="${coupon.link}" target="_blank">${coupon.title}</a></div>
-												<div>${coupon.title_info}</div>
-												<div><a href="${coupon.info_link}" target="_blank">查看店家資訊</a></div>
+												<div class="coupon-item-content-wrap">
+													<div><a href="${coupon.link}" target="_blank">${coupon.title}</a></div>
+													<div>${coupon.title_info}</div>
+													<div><a href="${coupon.info_link}" target="_blank">查看店家資訊</a></div>
+												</div>
 											</div>
 											<div class="cta-wrap">
 												<div class="cta-title">${coupon.cta_title}</div>
@@ -101,9 +103,11 @@ const SuperCoupon = {
 									coupon = `<div class="coupon-item splide__slide">
 										<div class="coupon-item-wrap no-img">
 											<div class="coupon-item-content">
-												<div><a href="${coupon.link}" target="_blank">${coupon.title}</a></div>
-												<div>${coupon.title_info}</div>
-												<div><a href="${coupon.info_link}" target="_blank">查看店家資訊</a></div>
+												<div class="coupon-item-content-wrap">
+													<div><a href="${coupon.link}" target="_blank">${coupon.title}</a></div>
+													<div>${coupon.title_info}</div>
+													<div><a href="${coupon.info_link}" target="_blank">查看店家資訊</a></div>
+												</div>
 											</div>
 										</div>
 									</div>`;
