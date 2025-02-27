@@ -28,3 +28,9 @@
 .supertaste-coupon .coupon-item-wrap.no-img{
 	align-items: center;
 }
+.supertaste-coupon .coupon-item-wrap .coupon-item-content{
+	align-items: center;
+}
+.supertaste-coupon .cta-wrap{
+	word-break: keep-all;
+}
