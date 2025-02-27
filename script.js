@@ -85,7 +85,7 @@ const SuperCoupon = {
 									coupon = `<div class="coupon-item splide__slide">
 										<div class="coupon-item-wrap">
 											<div class="coupon-item-left">
-												<div>
+												<div class="coupon-item-img-wrap">
 													<div class="coupon-item-img" style="background-image:url(${coupon.image})"></div>
 												</div>
 												<div class="coupon-item-content">
