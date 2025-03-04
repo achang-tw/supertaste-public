@@ -21,6 +21,8 @@
 .supertaste-coupon .coupon-item-img-wrap{
 	flex-shrink: 0;
 	position: relative;
+	overflow: hidden;
+	border-radius: 4px;
 }
 .supertaste-coupon .coupon-item-img{
 	width: 100%;
