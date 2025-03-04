@@ -19,7 +19,6 @@
 	display: flex;
 }
 .supertaste-coupon .coupon-item-img-wrap{
-	width: 40%;
 	flex-shrink: 0;
 	position: relative;
 }
