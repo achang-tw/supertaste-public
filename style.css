@@ -31,6 +31,7 @@
     width: 61%;
     flex-shrink: 0;
 	padding: 1%;
+	align-items: center;
 }
 .supertaste-coupon .coupon-item-img-wrap{
 	flex-shrink: 0;
@@ -40,7 +41,7 @@
 	width: 43%;
 }
 .supertaste-coupon .coupon-item-img-wrap .coupon-item-img{
-    padding-top: 100%;
+    padding-top: 86%;
     background-position: center;
     background-size: cover;
 }
