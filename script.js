@@ -169,7 +169,7 @@ const SuperCoupon = {
 							pagination: false,
 							arrows: false,
 							perPage: 1,
-							height: 105,
+							height: 240,
 							gap: 16,
 						}).mount();
 					}
