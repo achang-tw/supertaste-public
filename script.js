@@ -55,8 +55,6 @@ const SuperCoupon = {
 	async baseElement() {
 		const base = document.createElement('div');
 		base.classList.add('supertaste-coupon', 'splide');
-		base.style.height = '105px';
-		base.style.overflow = 'hidden';
 		base.innerHTML = `
 		<div class="splide__track">
 			<div class="coupon-list splide__list"></div>
