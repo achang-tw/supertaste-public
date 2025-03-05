@@ -4,6 +4,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
 	font-size: 14px;
+	line-height: 1.5;
 }
 .supertaste-coupon .coupon-list{
 	position: relative;
@@ -77,6 +78,7 @@
 	text-decoration: none;
 	color: #000;
 	font-weight: bold;
+	line-height: 1.5;
 }
 
 .supertaste-coupon .coupon-item-info{
@@ -88,4 +90,5 @@
 	color: #777;
 	font-size: 12px;
 	text-decoration: none;
+	line-height: 1.5;
 }
