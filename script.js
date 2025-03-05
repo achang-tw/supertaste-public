@@ -83,11 +83,39 @@ const SuperCoupon = {
 							case 'HTML畫版':
 								if(coupon.image) {
 									coupon = `<div class="coupon-item splide__slide">
-										<div class="coupon-item-wrap">
-											<div class="coupon-item-left">
-												<div class="coupon-item-img-wrap">
-													<img src="${coupon.image}" />
+										<div class="coupon-item-container">
+											<div class="coupon-item-wrap">
+												<div class="coupon-item-left">
+													<div class="coupon-item-img-wrap">
+														<img src="${coupon.image}" />
+													</div>
+													<div class="coupon-item-content">
+														<div class="coupon-item-content-wrap">
+															<div><a href="${coupon.link}" target="_blank">${coupon.title}</a></div>
+															<div>${coupon.title_info}</div>
+															<div><a href="${coupon.info_link}" target="_blank">查看店家資訊</a></div>
+														</div>
+													</div>
 												</div>
+												<div class="coupon-item-cta">
+													<div class="cta-wrap">
+														<div class="cta-title">${coupon.cta_title}</div>
+														<div class="cta-info">${coupon.cta_info}</div>
+														<div class="cta-btn">${coupon.cta_btn}</div>
+													</div>
+												</div>
+											</div>
+											<div class="coupon-item-bg">
+												<picture>
+													<img src="https://linsly-achang.github.io/supertaste-public/bg-pc.svg" alt="">
+												</picture>
+											</div>
+										</div>
+									</div>`;
+								}else{
+									coupon = `<div class="coupon-item splide__slide">
+										<div class="coupon-item-container">
+											<div class="coupon-item-wrap no-img">
 												<div class="coupon-item-content">
 													<div class="coupon-item-content-wrap">
 														<div><a href="${coupon.link}" target="_blank">${coupon.title}</a></div>
@@ -96,35 +124,11 @@ const SuperCoupon = {
 													</div>
 												</div>
 											</div>
-											<div class="coupon-item-cta">
-												<div class="cta-wrap">
-													<div class="cta-title">${coupon.cta_title}</div>
-													<div class="cta-info">${coupon.cta_info}</div>
-													<div class="cta-btn">${coupon.cta_btn}</div>
-												</div>
+											<div class="coupon-item-bg">
+												<picture>
+													<img src="https://linsly-achang.github.io/supertaste-public/bg-pc.svg" alt="">
+												</picture>
 											</div>
-										</div>
-										<div class="coupon-item-bg">
-											<picture>
-												<img src="https://linsly-achang.github.io/supertaste-public/bg-pc.svg" alt="">
-											</picture>
-										</div>
-									</div>`;
-								}else{
-									coupon = `<div class="coupon-item splide__slide">
-										<div class="coupon-item-wrap no-img">
-											<div class="coupon-item-content">
-												<div class="coupon-item-content-wrap">
-													<div><a href="${coupon.link}" target="_blank">${coupon.title}</a></div>
-													<div>${coupon.title_info}</div>
-													<div><a href="${coupon.info_link}" target="_blank">查看店家資訊</a></div>
-												</div>
-											</div>
-										</div>
-										<div class="coupon-item-bg">
-											<picture>
-												<img src="https://linsly-achang.github.io/supertaste-public/bg-pc.svg" alt="">
-											</picture>
 										</div>
 									</div>`;
 								}
@@ -156,7 +160,7 @@ const SuperCoupon = {
 					document.head.appendChild(style);
 
 					script.onload = async () => {
-						await new Promise(resolve => setTimeout(resolve, 1000)); // 等待1秒，确保脚本加载完成
+						await new Promise(resolve => setTimeout(resolve, 1000));
 
 						new Splide('.supertaste-coupon', {
 							type: 'loop',
