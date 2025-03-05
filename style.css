@@ -78,3 +78,14 @@
 	color: #000;
 	font-weight: bold;
 }
+
+.supertaste-coupon .coupon-item-info{
+	color: #777;
+	font-size: 14px;
+}
+
+.supertaste-coupon .coupon-item-info-link{
+	color: #777;
+	font-size: 12px;
+	text-decoration: none;
+}
