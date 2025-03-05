@@ -89,7 +89,7 @@ const SuperCoupon = {
 													</div>
 													<div class="coupon-item-content">
 														<div class="coupon-item-content-wrap">
-															<div><a href="${coupon.link}" target="_blank">${coupon.title}</a></div>
+															<div class="coupon-item-title"><a href="${coupon.link}" target="_blank">${coupon.title}</a></div>
 															<div>${coupon.title_info}</div>
 															<div><a href="${coupon.info_link}" target="_blank">查看店家資訊</a></div>
 														</div>
@@ -116,7 +116,7 @@ const SuperCoupon = {
 											<div class="coupon-item-wrap no-img">
 												<div class="coupon-item-content">
 													<div class="coupon-item-content-wrap">
-														<div><a href="${coupon.link}" target="_blank">${coupon.title}</a></div>
+														<div class="coupon-item-title"><a href="${coupon.link}" target="_blank">${coupon.title}</a></div>
 														<div>${coupon.title_info}</div>
 														<div><a href="${coupon.info_link}" target="_blank">查看店家資訊</a></div>
 													</div>
