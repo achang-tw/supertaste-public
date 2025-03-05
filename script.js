@@ -85,7 +85,7 @@ const SuperCoupon = {
 											<div class="coupon-item-wrap">
 												<div class="coupon-item-left">
 													<div class="coupon-item-img-wrap">
-														<img src="${coupon.image}" />
+														<div class="coupon-item-img" style="${coupon.image}"></div>
 													</div>
 													<div class="coupon-item-content">
 														<div class="coupon-item-content-wrap">
