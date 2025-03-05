@@ -157,9 +157,27 @@ const SuperCoupon = {
 					style.href = 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css';
 					document.head.appendChild(style);
 
-					script.onload = async () => {
-						await new Promise(resolve => setTimeout(resolve, 1000));
+					if(!window.WebFont){
+						const webfont = document.createElement('script');
+						webfont.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+						document.body.appendChild(webfont);
 
+						webfont.onload = async () => {
+							WebFont.load({
+								google: {
+									families: ['Noto Sans TC:400,500,700']
+								}
+							});
+						}
+					}else{
+						WebFont.load({
+							google: {
+								families: ['Noto Sans TC:400,500,700']
+							}
+						});
+					}
+
+					script.onload = async () => {
 						new Splide('.supertaste-coupon', {
 							type: 'loop',
 							autoplay: true,
@@ -170,6 +188,16 @@ const SuperCoupon = {
 							gap: 16,
 						}).mount();
 					}
+				}else{
+					new Splide('.supertaste-coupon', {
+						type: 'loop',
+						autoplay: true,
+						interval: 3000,
+						pagination: false,
+						arrows: false,
+						perPage: 1,
+						gap: 16,
+					}).mount();
 				}
 			});
 		});
