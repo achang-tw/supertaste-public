@@ -74,7 +74,7 @@
 	max-width: 905px;
 }
 
-.supertaste-coupon .coupon-item-title a{
+.supertaste-coupon .coupon-item-title{
 	font-size: 18px;
 	text-decoration: none;
 	color: #000;
@@ -108,7 +108,7 @@
 	line-height: 1.5;
 }
 
-.supertaste-coupon .cta-btn{
+.supertaste-coupon .cta-btn a{
 	display: inline-block;
 	padding: 6px 15px;
 	border-radius: 4px;
