@@ -97,6 +97,7 @@
 
 .supertaste-coupon .cta-title{
 	font-size: 16px;
+	color: #000;
 	font-weight: bold;
 	line-height: 1.5;
 }
@@ -116,4 +117,5 @@
 	font-size: 16px;
 	text-decoration: none;
 	box-shadow: 0 2px 12px -2px #E1A676;
+	margin-top: 1em;
 }
