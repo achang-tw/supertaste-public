@@ -52,3 +52,11 @@
 .supertaste-coupon .cta-wrap{
 	word-break: keep-all;
 }
+.supertaste-coupon .coupon-item-bg{
+	height: 100%;
+	position: relative;
+}
+
+.supertaste-coupon .coupon-item-bg img{
+	height: 100%;
+}
