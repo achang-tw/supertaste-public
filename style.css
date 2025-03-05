@@ -60,6 +60,7 @@
 }
 .supertaste-coupon .cta-wrap{
 	word-break: keep-all;
+	text-align: center;
 }
 .supertaste-coupon .coupon-item-bg{
 	height: 100%;
@@ -84,6 +85,7 @@
 .supertaste-coupon .coupon-item-info{
 	color: #777;
 	font-size: 14px;
+	line-height: 1.5;
 }
 
 .supertaste-coupon .coupon-item-info-link a{
@@ -91,4 +93,9 @@
 	font-size: 12px;
 	text-decoration: none;
 	line-height: 1.5;
+}
+
+.supertaste-coupon .cta-title{
+	font-size: 16px;
+	font-weight: bold;
 }
