@@ -10,6 +10,8 @@
 .supertaste-coupon .coupon-item{
 	display: flex;
 	justify-content: center;
+}
+.supertaste-coupon .coupon-item-container{
 	position: relative;
 }
 .supertaste-coupon .coupon-item-wrap{
