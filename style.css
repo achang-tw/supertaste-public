@@ -3,6 +3,7 @@
     overflow: hidden;
     margin-top: 10px;
     margin-bottom: 10px;
+	font-size: 14px;
 }
 .supertaste-coupon .coupon-list{
 	position: relative;
@@ -62,4 +63,8 @@
 	height: 240px;
 	width: 100%;
 	max-width: 905px;
+}
+
+.supertaste-coupon .coupon-item-title a{
+	font-size: 18px;
 }
