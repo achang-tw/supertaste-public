@@ -16,13 +16,13 @@
 }
 .supertaste-coupon .coupon-item-wrap{
 	display: flex;
-	gap: 10px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 10;
+    gap: 10px;
+    position: absolute;
+    top: 9%;
+    left: 3%;
+    right: 3%;
+    bottom: 12%;
+    z-index: 10;
 }
 .supertaste-coupon .coupon-item-left{
 	display: flex;
@@ -62,5 +62,7 @@
 }
 
 .supertaste-coupon .coupon-item-bg img{
-	height: 100%;
+	height: 240px;
+	width: 100%;
+	max-width: 905px;
 }
