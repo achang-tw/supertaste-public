@@ -104,9 +104,11 @@ const SuperCoupon = {
 												</div>
 											</div>
 										</div>
-										<picture>
-											<img src="https://linsly-achang.github.io/supertaste-public/bg-pc.svg" alt="">
-										</picture>
+										<div class="coupon-item-bg">
+											<picture>
+												<img src="https://linsly-achang.github.io/supertaste-public/bg-pc.svg" alt="">
+											</picture>
+										</div>
 									</div>`;
 								}else{
 									coupon = `<div class="coupon-item splide__slide">
@@ -119,9 +121,11 @@ const SuperCoupon = {
 												</div>
 											</div>
 										</div>
-										<picture>
-											<img src="https://linsly-achang.github.io/supertaste-public/bg-pc.svg" alt="">
-										</picture>
+										<div class="coupon-item-bg">
+											<picture>
+												<img src="https://linsly-achang.github.io/supertaste-public/bg-pc.svg" alt="">
+											</picture>
+										</div>
 									</div>`;
 								}
 								break;
