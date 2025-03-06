@@ -93,11 +93,15 @@
 }
 
 .supertaste-coupon .coupon-item-info-link a{
+    display: inline-block;
 	color: #777;
-	font-family: "Noto Sans TC";
-	font-size: 12px;
-	text-decoration: none;
-	line-height: 1.5;
+    font-family: "Noto Sans TC";
+    font-size: 12px;
+    text-decoration: none;
+    line-height: 1.5;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    padding: 2px 4px;
 }
 
 .supertaste-coupon .cta-title{
