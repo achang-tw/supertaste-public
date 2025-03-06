@@ -104,6 +104,12 @@
     padding: 2px 4px;
 }
 
+.supertaste-coupon .coupon-item-info-link a:hover{
+	color: #FFF;
+	background-color: #ffc338;
+	border-color: #ffc338;
+}
+
 .supertaste-coupon .cta-title{
 	font-family: "Noto Sans TC";
 	font-size: 16px;
@@ -130,4 +136,9 @@
 	text-decoration: none;
 	box-shadow: 0 2px 12px -2px #E1A676;
 	margin-top: 1em;
+}
+
+.supertaste-coupon .cta-btn a:hover{
+	background-color: #000;
+	color: #FFF;
 }
