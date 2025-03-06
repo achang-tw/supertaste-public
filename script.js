@@ -32,7 +32,7 @@ const SuperCoupon = {
 		}
 	},
 	async addBaseElement(){
-		const targets = ['header', 'h1'];
+		const targets = ['article p:not([class*="meta"])', '.entry-content p', 'header', 'h1'];
 		var target = null;
 		for(let i = 0; i < targets.length; i++){
 			if(document.querySelector(targets[i])){
