@@ -92,7 +92,7 @@ const SuperCoupon = {
 													</div>
 													<div class="coupon-item-content">
 														<div class="coupon-item-content-wrap">
-															<div>
+															<div class="coupon-item-logo">
 																<picture>
 																	<source srcset="https://linsly-achang.github.io/supertaste-public/coupon-icon-mo.jpg" media="(max-width: 768px)">
 																	<img src="https://linsly-achang.github.io/supertaste-public/coupon-icon-pc.jpg" alt="">
