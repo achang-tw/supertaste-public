@@ -60,8 +60,15 @@
 	flex-grow: 1;
 	padding: 10px;
 }
-.supertaste-coupon .coupon-item-content .coupon-item-content-wrap{
-	flex-grow: 1;
+.supertaste-coupon .coupon-item-left .coupon-item-content{
+	position: relative;
+}
+.supertaste-coupon .coupon-item-left .coupon-item-content .coupon-item-content-wrap{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
 .supertaste-coupon .cta-wrap{
 	word-break: keep-all;
