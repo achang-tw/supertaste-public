@@ -4,7 +4,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
 	font-family: "Noto Sans TC";
-	font-size: 14px;
+	font-size: 14px !important;
 	line-height: 1.5;
 }
 .supertaste-coupon .coupon-list{
@@ -78,7 +78,7 @@
 
 .supertaste-coupon .coupon-item-title{
 	font-family: "Noto Sans TC";
-	font-size: 18px;
+	font-size: 18px !important;
 	text-decoration: none;
 	color: #000;
 	font-weight: bold;
@@ -88,7 +88,7 @@
 .supertaste-coupon .coupon-item-info{
 	color: #777;
 	font-family: "Noto Sans TC";
-	font-size: 14px;
+	font-size: 14px !important;
 	line-height: 1.5;
 }
 
@@ -96,7 +96,7 @@
     display: inline-block;
 	color: #777;
     font-family: "Noto Sans TC";
-    font-size: 12px;
+    font-size: 12px !important;
     text-decoration: none;
     line-height: 1.5;
     border: 1px solid #aaa;
@@ -112,7 +112,7 @@
 
 .supertaste-coupon .cta-title{
 	font-family: "Noto Sans TC";
-	font-size: 16px;
+	font-size: 16px !important;
 	color: #000;
 	font-weight: bold;
 	line-height: 1.5;
@@ -120,7 +120,7 @@
 
 .supertaste-coupon .cta-info{
 	font-family: "Noto Sans TC";
-	font-size: 14px;
+	font-size: 14px !important;
 	color: #414141;
 	line-height: 1.5;
 }
@@ -132,7 +132,7 @@
 	background-color: #FFF;
 	color: #000;
 	font-family: "Noto Sans TC";
-	font-size: 16px;
+	font-size: 16px !important;
 	text-decoration: none;
 	box-shadow: 0 2px 12px -2px #E1A676;
 	margin-top: 1em;

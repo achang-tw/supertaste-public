@@ -77,6 +77,9 @@ const SuperCoupon = {
 			const promises = Array.from(document.querySelectorAll('.supertaste-coupon .coupon-list')).map(container => {
 				return new Promise(resolve => {
 					container.innerHTML = this.coupons.map(coupon => {
+						if(coupon.title_info){
+							coupon.title_info = coupon.title_info.replace(/\n/g, '<br>');
+						}
 						switch(coupon.type){
 							case 'HTML畫版':
 								if(coupon.image) {
