@@ -60,6 +60,9 @@
 	flex-grow: 1;
 	padding: 10px;
 }
+.supertaste-coupon .coupon-item-content .coupon-item-content-wrap{
+	flex-grow: 1;
+}
 .supertaste-coupon .cta-wrap{
 	word-break: keep-all;
 	text-align: center;
