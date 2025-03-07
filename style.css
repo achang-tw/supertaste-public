@@ -70,6 +70,7 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
+	padding-left: 4%;
 }
 .supertaste-coupon .cta-wrap{
 	word-break: keep-all;
