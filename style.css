@@ -147,7 +147,12 @@
 }
 
 .supertaste-coupon .coupon-item-logo{
-	max-width: 33%;
+	max-width: 32%;
+	margin: 0;
+}
+
+.supertaste-coupon .coupon-item-logo img{
+	border-radius: 0 0 10px 10px;
 }
 
 @media screen and (max-width: 768px) {
