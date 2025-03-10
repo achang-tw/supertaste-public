@@ -7,6 +7,7 @@ const SuperCoupon = {
 			await this.addBaseElement();
 			await this.loadStyles();
 			await this.loadCoupons();
+			await this.drawHTML();
 		}catch(e){
 			console.error('loaded coupons failed!', e);
 		}
@@ -91,144 +92,151 @@ const SuperCoupon = {
 		return pickedCoupons;
 	},
 	async loadCoupons(){
-		fetch('https://ads.achang.tw/super-coupon/index.php').then(res => res.json()).then(data => {
-			this.coupons = JSON.parse(data);
-			
-			const promises = Array.from(document.querySelectorAll('.supertaste-coupon .coupon-list')).map(container => {
-				return new Promise(resolve => {
-					container.innerHTML = this.pickCoupons(this.coupons, 1).map(coupon => {
-						if(coupon.title_info){
-							coupon.title_info = coupon.title_info.replace(/\n/g, '<br>');
-						}
-						switch(coupon.type){
-							case 'HTML畫版':
-								if(coupon.image) {
-									coupon = `<div class="coupon-item splide__slide">
-										<div class="coupon-item-container">
-											<div class="coupon-item-wrap">
-												<div class="coupon-item-left">
-													<div class="coupon-item-img-wrap">
-														<div class="coupon-item-img" style="background-image:url(${coupon.image})"></div>
-													</div>
-													<div class="coupon-item-content">
-														<div class="coupon-item-content-wrap">
-															<div class="coupon-item-logo">
-																<picture>
-																	<source srcset="https://linsly-achang.github.io/supertaste-public/coupon-icon-mo.jpg" media="(max-width: 768px)">
-																	<img src="https://linsly-achang.github.io/supertaste-public/coupon-icon-pc.jpg" alt="">
-																</picture>
-															</div>
-															<div class="coupon-item-title">${coupon.title}</div>
-															<div class="coupon-item-info">${coupon.title_info}</div>` +
-															(coupon.info_link ? `<div class="coupon-item-info-link"><a href="${coupon.info_link}" target="_blank">查看店家資訊</a></div>` : '') +
-														`</div>
-													</div>
+		let coupons = localStorage.getItem('superCoupons');
+		if(coupons){
+			this.coupons = JSON.parse(coupons);
+		}else{
+			fetch('https://ads.achang.tw/super-coupon/index.php').then(res => res.json()).then(data => {
+				this.coupons = JSON.parse(data);
+				localStorage.setItem('superCoupons', JSON.stringify(this.coupons));
+			});
+		}
+	},
+	async drawHTML(){
+		const promises = Array.from(document.querySelectorAll('.supertaste-coupon .coupon-list')).map(container => {
+			return new Promise(resolve => {
+				container.innerHTML = this.pickCoupons(this.coupons, 1).map(coupon => {
+					if(coupon.title_info){
+						coupon.title_info = coupon.title_info.replace(/\n/g, '<br>');
+					}
+					switch(coupon.type){
+						case 'HTML畫版':
+							if(coupon.image) {
+								coupon = `<div class="coupon-item splide__slide">
+									<div class="coupon-item-container">
+										<div class="coupon-item-wrap">
+											<div class="coupon-item-left">
+												<div class="coupon-item-img-wrap">
+													<div class="coupon-item-img" style="background-image:url(${coupon.image})"></div>
 												</div>
-												<div class="coupon-item-cta">
-													<div class="cta-wrap">
-														<div class="cta-title">${coupon.cta_title}</div>
-														<div class="cta-info">${coupon.cta_info}</div>
-														<div class="cta-btn"><a href="${coupon.link}" target="_blank">${coupon.cta_btn}</a></div>
-													</div>
-												</div>
-											</div>
-											<div class="coupon-item-bg">
-												<picture>
-													<img src="https://linsly-achang.github.io/supertaste-public/bg-pc.svg" alt="">
-												</picture>
-											</div>
-										</div>
-									</div>`;
-								}else{
-									coupon = `<div class="coupon-item splide__slide">
-										<div class="coupon-item-container">
-											<div class="coupon-item-wrap no-img">
 												<div class="coupon-item-content">
 													<div class="coupon-item-content-wrap">
-														<div class="coupon-item-title"><a href="${coupon.link}" target="_blank">${coupon.title}</a></div>
-														<div>${coupon.title_info}</div>
-														<div><a href="${coupon.info_link}" target="_blank">查看店家資訊</a></div>
-													</div>
+														<div class="coupon-item-logo">
+															<picture>
+																<source srcset="https://linsly-achang.github.io/supertaste-public/coupon-icon-mo.jpg" media="(max-width: 768px)">
+																<img src="https://linsly-achang.github.io/supertaste-public/coupon-icon-pc.jpg" alt="">
+															</picture>
+														</div>
+														<div class="coupon-item-title">${coupon.title}</div>
+														<div class="coupon-item-info">${coupon.title_info}</div>` +
+														(coupon.info_link ? `<div class="coupon-item-info-link"><a href="${coupon.info_link}" target="_blank">查看店家資訊</a></div>` : '') +
+													`</div>
 												</div>
 											</div>
-											<div class="coupon-item-bg">
-												<picture>
-													<img src="https://linsly-achang.github.io/supertaste-public/bg-pc.svg" alt="">
-												</picture>
+											<div class="coupon-item-cta">
+												<div class="cta-wrap">
+													<div class="cta-title">${coupon.cta_title}</div>
+													<div class="cta-info">${coupon.cta_info}</div>
+													<div class="cta-btn"><a href="${coupon.link}" target="_blank">${coupon.cta_btn}</a></div>
+												</div>
 											</div>
 										</div>
-									</div>`;
-								}
-								break;
-							case '全圖模式':
-								coupon = `<div class="coupon-item splide__slide">
-									<div class="coupon-item-wrap">
-										<div><a href="${coupon.link}" target="_blank"><img src="${coupon.image}" alt="${coupon.title}"></a></div>
+										<div class="coupon-item-bg">
+											<picture>
+												<img src="https://linsly-achang.github.io/supertaste-public/bg-pc.svg" alt="">
+											</picture>
+										</div>
 									</div>
 								</div>`;
-								break;
-						}
-
-						return coupon;
-					}).join('');
-					resolve();
-				});
-			});
-
-			Promise.all(promises).then(() => {
-				if(!window.WebFont){
-					const webfont = document.createElement('script');
-					webfont.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
-					document.body.appendChild(webfont);
-
-					webfont.onload = async () => {
-						WebFont.load({
-							google: {
-								families: ['Noto Sans TC:400,500,700']
+							}else{
+								coupon = `<div class="coupon-item splide__slide">
+									<div class="coupon-item-container">
+										<div class="coupon-item-wrap no-img">
+											<div class="coupon-item-content">
+												<div class="coupon-item-content-wrap">
+													<div class="coupon-item-title"><a href="${coupon.link}" target="_blank">${coupon.title}</a></div>
+													<div>${coupon.title_info}</div>
+													<div><a href="${coupon.info_link}" target="_blank">查看店家資訊</a></div>
+												</div>
+											</div>
+										</div>
+										<div class="coupon-item-bg">
+											<picture>
+												<img src="https://linsly-achang.github.io/supertaste-public/bg-pc.svg" alt="">
+											</picture>
+										</div>
+									</div>
+								</div>`;
 							}
-						});
+							break;
+						case '全圖模式':
+							coupon = `<div class="coupon-item splide__slide">
+								<div class="coupon-item-wrap">
+									<div><a href="${coupon.link}" target="_blank"><img src="${coupon.image}" alt="${coupon.title}"></a></div>
+								</div>
+							</div>`;
+							break;
 					}
-				}else{
+
+					return coupon;
+				}).join('');
+				resolve();
+			});
+		});
+
+		Promise.all(promises).then(() => {
+			if(!window.WebFont){
+				const webfont = document.createElement('script');
+				webfont.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+				document.body.appendChild(webfont);
+
+				webfont.onload = async () => {
 					WebFont.load({
 						google: {
 							families: ['Noto Sans TC:400,500,700']
 						}
 					});
 				}
+			}else{
+				WebFont.load({
+					google: {
+						families: ['Noto Sans TC:400,500,700']
+					}
+				});
+			}
 
-				// if(!window.Splide) {
-				// 	const script = document.createElement('script');
-				// 	script.src = 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js';
-				// 	document.body.appendChild(script);
+			// if(!window.Splide) {
+			// 	const script = document.createElement('script');
+			// 	script.src = 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js';
+			// 	document.body.appendChild(script);
 
-				// 	const style = document.createElement('link');
-				// 	style.rel = 'stylesheet';
-				// 	style.href = 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css';
-				// 	document.head.appendChild(style);
+			// 	const style = document.createElement('link');
+			// 	style.rel = 'stylesheet';
+			// 	style.href = 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css';
+			// 	document.head.appendChild(style);
 
-				// 	script.onload = async () => {
-				// 		new Splide('.supertaste-coupon', {
-				// 			type: 'loop',
-				// 			autoplay: true,
-				// 			interval: 3000,
-				// 			pagination: false,
-				// 			arrows: false,
-				// 			perPage: 1,
-				// 			gap: 16,
-				// 		}).mount();
-				// 	}
-				// }else{
-				// 	new Splide('.supertaste-coupon', {
-				// 		type: 'loop',
-				// 		autoplay: true,
-				// 		interval: 3000,
-				// 		pagination: false,
-				// 		arrows: false,
-				// 		perPage: 1,
-				// 		gap: 16,
-				// 	}).mount();
-				// }
-			});
+			// 	script.onload = async () => {
+			// 		new Splide('.supertaste-coupon', {
+			// 			type: 'loop',
+			// 			autoplay: true,
+			// 			interval: 3000,
+			// 			pagination: false,
+			// 			arrows: false,
+			// 			perPage: 1,
+			// 			gap: 16,
+			// 		}).mount();
+			// 	}
+			// }else{
+			// 	new Splide('.supertaste-coupon', {
+			// 		type: 'loop',
+			// 		autoplay: true,
+			// 		interval: 3000,
+			// 		pagination: false,
+			// 		arrows: false,
+			// 		perPage: 1,
+			// 		gap: 16,
+			// 	}).mount();
+			// }
 		});
 	}
 };
