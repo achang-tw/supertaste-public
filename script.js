@@ -7,7 +7,6 @@ const SuperCoupon = {
 			await this.addBaseElement();
 			await this.loadStyles();
 			await this.loadCoupons();
-			await this.drawHTML();
 		}catch(e){
 			console.error('loaded coupons failed!', e);
 		}
@@ -96,6 +95,7 @@ const SuperCoupon = {
 
 		if(coupons && coupons.coupons && coupons.time && new Date().getTime() < coupons.time){
 			this.coupons = this.validCoupons(coupons.coupons);
+			this.drawHTML();
 		}else{
 			fetch('https://ads.achang.tw/super-coupon/index.php').then(res => res.json()).then(data => {
 				const validCoupons = this.validCoupons(JSON.parse(data))
@@ -105,6 +105,7 @@ const SuperCoupon = {
 					time: new Date().getTime() + 60 * 5 * 1000,
 				})
 				);
+				this.drawHTML();
 			});
 		}
 	},
