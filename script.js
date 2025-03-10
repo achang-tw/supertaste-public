@@ -5,9 +5,13 @@ const SuperCoupon = {
 
 		try{
 			await this.addBaseElement();
+			console.log('added!');
 			await this.loadStyles();
+			console.log('styles loaded!')
 			await this.loadCoupons();
+			console.log('loaded coupons!');
 			await this.drawHTML();
+			console.log('drawn!');
 		}catch(e){
 			console.error('loaded coupons failed!', e);
 		}
@@ -118,102 +122,104 @@ const SuperCoupon = {
 		});
 	},
 	async drawHTML(){
-		Array.from(document.querySelectorAll('.supertaste-coupon .coupon-list')).map(container => {
-			container.innerHTML = this.pickCoupons(this.coupons, 1).map(coupon => {
-				if(coupon.title_info){
-					coupon.title_info = coupon.title_info.replace(/\n/g, '<br>');
-				}
-				switch(coupon.type){
-					case 'HTML畫版':
-						if(coupon.image) {
-							coupon = `<div class="coupon-item splide__slide">
-								<div class="coupon-item-container">
-									<div class="coupon-item-wrap">
-										<div class="coupon-item-left">
-											<div class="coupon-item-img-wrap">
-												<div class="coupon-item-img" style="background-image:url(${coupon.image})"></div>
+		if(this.coupons.length > 0){
+			Array.from(document.querySelectorAll('.supertaste-coupon .coupon-list')).map(container => {
+				container.innerHTML = this.pickCoupons(this.coupons, 1).map(coupon => {
+					if(coupon.title_info){
+						coupon.title_info = coupon.title_info.replace(/\n/g, '<br>');
+					}
+					switch(coupon.type){
+						case 'HTML畫版':
+							if(coupon.image) {
+								coupon = `<div class="coupon-item splide__slide">
+									<div class="coupon-item-container">
+										<div class="coupon-item-wrap">
+											<div class="coupon-item-left">
+												<div class="coupon-item-img-wrap">
+													<div class="coupon-item-img" style="background-image:url(${coupon.image})"></div>
+												</div>
+												<div class="coupon-item-content">
+													<div class="coupon-item-content-wrap">
+														<div class="coupon-item-logo">
+															<picture>
+																<source srcset="https://linsly-achang.github.io/supertaste-public/coupon-icon-mo.jpg" media="(max-width: 768px)">
+																<img src="https://linsly-achang.github.io/supertaste-public/coupon-icon-pc.jpg" alt="">
+															</picture>
+														</div>
+														<div class="coupon-item-title">${coupon.title}</div>
+														<div class="coupon-item-info">${coupon.title_info}</div>` +
+														(coupon.info_link ? `<div class="coupon-item-info-link"><a href="${coupon.info_link}" target="_blank">查看店家資訊</a></div>` : '') +
+													`</div>
+												</div>
 											</div>
+											<div class="coupon-item-cta">
+												<div class="cta-wrap">
+													<div class="cta-title">${coupon.cta_title}</div>
+													<div class="cta-info">${coupon.cta_info}</div>
+													<div class="cta-btn"><a href="${coupon.link}" target="_blank">${coupon.cta_btn}</a></div>
+												</div>
+											</div>
+										</div>
+										<div class="coupon-item-bg">
+											<picture>
+												<img src="https://linsly-achang.github.io/supertaste-public/bg-pc.svg" alt="">
+											</picture>
+										</div>
+									</div>
+								</div>`;
+							}else{
+								coupon = `<div class="coupon-item splide__slide">
+									<div class="coupon-item-container">
+										<div class="coupon-item-wrap no-img">
 											<div class="coupon-item-content">
 												<div class="coupon-item-content-wrap">
-													<div class="coupon-item-logo">
-														<picture>
-															<source srcset="https://linsly-achang.github.io/supertaste-public/coupon-icon-mo.jpg" media="(max-width: 768px)">
-															<img src="https://linsly-achang.github.io/supertaste-public/coupon-icon-pc.jpg" alt="">
-														</picture>
-													</div>
-													<div class="coupon-item-title">${coupon.title}</div>
-													<div class="coupon-item-info">${coupon.title_info}</div>` +
-													(coupon.info_link ? `<div class="coupon-item-info-link"><a href="${coupon.info_link}" target="_blank">查看店家資訊</a></div>` : '') +
-												`</div>
+													<div class="coupon-item-title"><a href="${coupon.link}" target="_blank">${coupon.title}</a></div>
+													<div>${coupon.title_info}</div>
+													<div><a href="${coupon.info_link}" target="_blank">查看店家資訊</a></div>
+												</div>
 											</div>
 										</div>
-										<div class="coupon-item-cta">
-											<div class="cta-wrap">
-												<div class="cta-title">${coupon.cta_title}</div>
-												<div class="cta-info">${coupon.cta_info}</div>
-												<div class="cta-btn"><a href="${coupon.link}" target="_blank">${coupon.cta_btn}</a></div>
-											</div>
+										<div class="coupon-item-bg">
+											<picture>
+												<img src="https://linsly-achang.github.io/supertaste-public/bg-pc.svg" alt="">
+											</picture>
 										</div>
 									</div>
-									<div class="coupon-item-bg">
-										<picture>
-											<img src="https://linsly-achang.github.io/supertaste-public/bg-pc.svg" alt="">
-										</picture>
-									</div>
-								</div>
-							</div>`;
-						}else{
+								</div>`;
+							}
+							break;
+						case '全圖模式':
 							coupon = `<div class="coupon-item splide__slide">
-								<div class="coupon-item-container">
-									<div class="coupon-item-wrap no-img">
-										<div class="coupon-item-content">
-											<div class="coupon-item-content-wrap">
-												<div class="coupon-item-title"><a href="${coupon.link}" target="_blank">${coupon.title}</a></div>
-												<div>${coupon.title_info}</div>
-												<div><a href="${coupon.info_link}" target="_blank">查看店家資訊</a></div>
-											</div>
-										</div>
-									</div>
-									<div class="coupon-item-bg">
-										<picture>
-											<img src="https://linsly-achang.github.io/supertaste-public/bg-pc.svg" alt="">
-										</picture>
-									</div>
+								<div class="coupon-item-wrap">
+									<div><a href="${coupon.link}" target="_blank"><img src="${coupon.image}" alt="${coupon.title}"></a></div>
 								</div>
 							</div>`;
+							break;
+					}
+
+					return coupon;
+				}).join('');
+			});
+
+			if(!window.WebFont){
+				const webfont = document.createElement('script');
+				webfont.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+				document.body.appendChild(webfont);
+
+				webfont.onload = async () => {
+					WebFont.load({
+						google: {
+							families: ['Noto Sans TC:400,500,700']
 						}
-						break;
-					case '全圖模式':
-						coupon = `<div class="coupon-item splide__slide">
-							<div class="coupon-item-wrap">
-								<div><a href="${coupon.link}" target="_blank"><img src="${coupon.image}" alt="${coupon.title}"></a></div>
-							</div>
-						</div>`;
-						break;
+					});
 				}
-
-				return coupon;
-			}).join('');
-		});
-
-		if(!window.WebFont){
-			const webfont = document.createElement('script');
-			webfont.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
-			document.body.appendChild(webfont);
-
-			webfont.onload = async () => {
+			}else{
 				WebFont.load({
 					google: {
 						families: ['Noto Sans TC:400,500,700']
 					}
 				});
 			}
-		}else{
-			WebFont.load({
-				google: {
-					families: ['Noto Sans TC:400,500,700']
-				}
-			});
 		}
 	}
 };
