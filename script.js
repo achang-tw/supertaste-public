@@ -92,13 +92,18 @@ const SuperCoupon = {
 		return pickedCoupons;
 	},
 	async loadCoupons(){
-		let coupons = localStorage.getItem('superCoupons');
-		if(coupons){
-			this.coupons = this.validCoupons(JSON.parse(coupons));
+		const coupons = localStorage.getItem('superCoupons');
+
+		if(coupons && coupons.coupons && coupons.time && new Date().getTime() < coupons.time){
+			this.coupons = this.validCoupons(JSON.parse(coupons).coupons);
 		}else{
 			fetch('https://ads.achang.tw/super-coupon/index.php').then(res => res.json()).then(data => {
-				this.coupons = this.validCoupons(JSON.parse(data));
-				localStorage.setItem('superCoupons', JSON.stringify(this.coupons));
+				const validCoupons = this.validCoupons(JSON.parse(data))
+				this.coupons = validCoupons;
+				localStorage.setItem('superCoupons', {
+					validCoupons: JSON.stringify(validCoupons),
+					time: new Date().getTime() + 60 * 5 * 1000,
+				});
 			});
 		}
 	},
