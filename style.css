@@ -164,6 +164,11 @@
 	border-radius: 0 0 10px 10px;
 }
 
+.supertaste-coupon .splide__track,
+.supertaste-coupon .coupon-list{
+	height: 100%;
+}
+
 @media screen and (max-width: 768px) {
 	.supertaste-coupon{
 		position: fixed;
