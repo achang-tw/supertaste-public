@@ -61,6 +61,7 @@ const SuperCoupon = {
 		</div>`;
 		return base;
 	},
+	
 	async loadStyles(){
 		var link = document.createElement('link');
 
@@ -70,13 +71,32 @@ const SuperCoupon = {
 
 		document.head.appendChild(link);
 	},
+	pickCoupons(coupons, pickedAmount = 3){
+		const pickedCoupons = [];
+
+		// randomly pick coupons by weight
+		while(pickedCoupons.length < pickedAmount){
+			const totalWeight = coupons.reduce((acc, coupon) => acc + Number(coupon.weight), 0);
+			let randomNum = Math.random() * totalWeight;
+
+			for(let coupon of coupons){
+				randomNum -= Number(coupon.weight);
+				if (randomNum < 0) {
+					pickedCoupons.push(coupon);
+					break;
+				}
+			}
+		}
+
+		return pickedCoupons;
+	},
 	async loadCoupons(){
 		fetch('https://ads.achang.tw/super-coupon/index.php').then(res => res.json()).then(data => {
 			this.coupons = JSON.parse(data);
 			
 			const promises = Array.from(document.querySelectorAll('.supertaste-coupon .coupon-list')).map(container => {
 				return new Promise(resolve => {
-					container.innerHTML = this.coupons.map(coupon => {
+					container.innerHTML = this.pickCoupons(this.coupons, 1).map(coupon => {
 						if(coupon.title_info){
 							coupon.title_info = coupon.title_info.replace(/\n/g, '<br>');
 						}
@@ -156,6 +176,26 @@ const SuperCoupon = {
 			});
 
 			Promise.all(promises).then(() => {
+				if(!window.WebFont){
+					const webfont = document.createElement('script');
+					webfont.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+					document.body.appendChild(webfont);
+
+					webfont.onload = async () => {
+						WebFont.load({
+							google: {
+								families: ['Noto Sans TC:400,500,700']
+							}
+						});
+					}
+				}else{
+					WebFont.load({
+						google: {
+							families: ['Noto Sans TC:400,500,700']
+						}
+					});
+				}
+
 				if(!window.Splide) {
 					const script = document.createElement('script');
 					script.src = 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js';
@@ -165,26 +205,6 @@ const SuperCoupon = {
 					style.rel = 'stylesheet';
 					style.href = 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css';
 					document.head.appendChild(style);
-
-					if(!window.WebFont){
-						const webfont = document.createElement('script');
-						webfont.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
-						document.body.appendChild(webfont);
-
-						webfont.onload = async () => {
-							WebFont.load({
-								google: {
-									families: ['Noto Sans TC:400,500,700']
-								}
-							});
-						}
-					}else{
-						WebFont.load({
-							google: {
-								families: ['Noto Sans TC:400,500,700']
-							}
-						});
-					}
 
 					script.onload = async () => {
 						new Splide('.supertaste-coupon', {
