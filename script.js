@@ -196,38 +196,38 @@ const SuperCoupon = {
 					});
 				}
 
-				if(!window.Splide) {
-					const script = document.createElement('script');
-					script.src = 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js';
-					document.body.appendChild(script);
+				// if(!window.Splide) {
+				// 	const script = document.createElement('script');
+				// 	script.src = 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js';
+				// 	document.body.appendChild(script);
 
-					const style = document.createElement('link');
-					style.rel = 'stylesheet';
-					style.href = 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css';
-					document.head.appendChild(style);
+				// 	const style = document.createElement('link');
+				// 	style.rel = 'stylesheet';
+				// 	style.href = 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css';
+				// 	document.head.appendChild(style);
 
-					script.onload = async () => {
-						new Splide('.supertaste-coupon', {
-							type: 'loop',
-							autoplay: true,
-							interval: 3000,
-							pagination: false,
-							arrows: false,
-							perPage: 1,
-							gap: 16,
-						}).mount();
-					}
-				}else{
-					new Splide('.supertaste-coupon', {
-						type: 'loop',
-						autoplay: true,
-						interval: 3000,
-						pagination: false,
-						arrows: false,
-						perPage: 1,
-						gap: 16,
-					}).mount();
-				}
+				// 	script.onload = async () => {
+				// 		new Splide('.supertaste-coupon', {
+				// 			type: 'loop',
+				// 			autoplay: true,
+				// 			interval: 3000,
+				// 			pagination: false,
+				// 			arrows: false,
+				// 			perPage: 1,
+				// 			gap: 16,
+				// 		}).mount();
+				// 	}
+				// }else{
+				// 	new Splide('.supertaste-coupon', {
+				// 		type: 'loop',
+				// 		autoplay: true,
+				// 		interval: 3000,
+				// 		pagination: false,
+				// 		arrows: false,
+				// 		perPage: 1,
+				// 		gap: 16,
+				// 	}).mount();
+				// }
 			});
 		});
 	}
