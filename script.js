@@ -120,6 +120,7 @@ const SuperCoupon = {
 		});
 	},
 	async drawHTML(){
+		console.log(this.coupons)
 		if(this.coupons.length > 0){
 			Array.from(document.querySelectorAll('.supertaste-coupon .coupon-list')).map(container => {
 				container.innerHTML = this.pickCoupons(this.coupons, 1).map(coupon => {
