@@ -7,7 +7,7 @@ const SuperCoupon = {
 			await this.addBaseElement();
 			await this.loadStyles();
 			await this.loadCoupons();
-			await this.drawHTML();
+			// await this.drawHTML();
 		}catch(e){
 			console.error('loaded coupons failed!', e);
 		}
