@@ -7,6 +7,7 @@ const SuperCoupon = {
 			await this.addBaseElement();
 			await this.loadStyles();
 			await this.loadCoupons();
+			this.loadFont();
 		}catch(e){
 			console.error('loaded coupons failed!', e);
 		}
@@ -197,26 +198,27 @@ const SuperCoupon = {
 					return coupon;
 				}).join('');
 			});
+		}
+	},
+	loadFont(){
+		if(!window.WebFont){
+			const webfont = document.createElement('script');
+			webfont.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			document.body.appendChild(webfont);
 
-			if(!window.WebFont){
-				const webfont = document.createElement('script');
-				webfont.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
-				document.body.appendChild(webfont);
-
-				webfont.onload = async () => {
-					WebFont.load({
-						google: {
-							families: ['Noto Sans TC:400,500,700']
-						}
-					});
-				}
-			}else{
+			webfont.onload = async () => {
 				WebFont.load({
 					google: {
 						families: ['Noto Sans TC:400,500,700']
 					}
 				});
 			}
+		}else{
+			WebFont.load({
+				google: {
+					families: ['Noto Sans TC:400,500,700']
+				}
+			});
 		}
 	}
 };
