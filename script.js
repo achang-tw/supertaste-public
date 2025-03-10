@@ -7,7 +7,7 @@ const SuperCoupon = {
 			await this.addBaseElement();
 			await this.loadStyles();
 			await this.loadCoupons();
-			// this.drawHTML();
+			await this.drawHTML();
 		}catch(e){
 			console.error('loaded coupons failed!', e);
 		}
@@ -94,13 +94,22 @@ const SuperCoupon = {
 	async loadCoupons(){
 		let coupons = localStorage.getItem('superCoupons');
 		if(coupons){
-			this.coupons = JSON.parse(coupons);
+			this.coupons = this.validCoupons(JSON.parse(coupons));
 		}else{
 			fetch('https://ads.achang.tw/super-coupon/index.php').then(res => res.json()).then(data => {
-				this.coupons = JSON.parse(data);
+				this.coupons = this.validCoupons(JSON.parse(data));
 				localStorage.setItem('superCoupons', JSON.stringify(this.coupons));
 			});
 		}
+	},
+	validCoupons(coupons){
+		return coupons.filter(coupon => {
+			const now = new Date();
+			const start = new Date(coupon.start);
+			const end = new Date(coupon.end);
+
+			return now >= start && now <= end;
+		});
 	},
 	async drawHTML(){
 		Array.from(document.querySelectorAll('.supertaste-coupon .coupon-list')).map(container => {
