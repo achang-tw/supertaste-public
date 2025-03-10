@@ -92,10 +92,10 @@ const SuperCoupon = {
 		return pickedCoupons;
 	},
 	async loadCoupons(){
-		const coupons = localStorage.getItem('superCoupons');
+		const coupons = JSON.parse(localStorage.getItem('superCoupons')||"{}");
 
 		if(coupons && coupons.coupons && coupons.time && new Date().getTime() < coupons.time){
-			this.coupons = this.validCoupons(JSON.parse(coupons).coupons);
+			this.coupons = this.validCoupons(coupons.coupons);
 		}else{
 			fetch('https://ads.achang.tw/super-coupon/index.php').then(res => res.json()).then(data => {
 				const validCoupons = this.validCoupons(JSON.parse(data))
