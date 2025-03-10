@@ -5,13 +5,9 @@ const SuperCoupon = {
 
 		try{
 			await this.addBaseElement();
-			console.log('added!');
 			await this.loadStyles();
-			console.log('styles loaded!')
 			await this.loadCoupons();
-			console.log('loaded coupons!');
 			await this.drawHTML();
-			console.log('drawn!');
 		}catch(e){
 			console.error('loaded coupons failed!', e);
 		}
