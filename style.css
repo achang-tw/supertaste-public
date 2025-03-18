@@ -21,10 +21,10 @@
 	display: flex;
     gap: 10px;
     position: absolute;
-    top: 9.5%;
+    top: 6.5%;
     left: 3%;
     right: 3%;
-    bottom: 12%;
+    bottom: 10%;
     z-index: 10;
 }
 .supertaste-coupon .coupon-item-left{
@@ -79,9 +79,9 @@
 }
 
 .supertaste-coupon .coupon-item-bg img{
-	height: 240px;
+	max-height: 240px;
 	width: 100%;
-	max-width: 905px;
+	max-width: 905px;line-height: 1;
 }
 
 .supertaste-coupon .coupon-item-title{
