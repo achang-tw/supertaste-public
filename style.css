@@ -156,9 +156,10 @@
 	margin: auto;
 }
 
+.supertaste-coupon .cta-wrap,
 .supertaste-coupon .coupon-item-logo,
 .supertaste-coupon .cta-btn{
-	line-height: 1;
+	line-height: 1!important;
 }
 
 .supertaste-coupon .coupon-item-logo img{
