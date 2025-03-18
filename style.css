@@ -65,11 +65,7 @@
 	height: 100%;
 }
 .supertaste-coupon .coupon-item-left .coupon-item-content .coupon-item-content-wrap{
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
+	margin-left: 0;
 	padding-left: 4%;
 }
 .supertaste-coupon .cta-wrap{
@@ -156,8 +152,13 @@
 }
 
 .supertaste-coupon .coupon-item-logo{
-	max-width: 31%;
-	margin: 0;
+	max-width: 96%;
+	margin: auto;
+}
+
+.supertaste-coupon .coupon-item-logo,
+.supertaste-coupon .cta-btn{
+	line-height: 1;
 }
 
 .supertaste-coupon .coupon-item-logo img{
