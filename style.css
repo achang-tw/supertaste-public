@@ -156,6 +156,10 @@
 	margin: auto;
 }
 
+.supertaste-coupon div{
+	line-height: 1.4!important;
+}
+
 .supertaste-coupon .cta-wrap,
 .supertaste-coupon .coupon-item-logo{
 	line-height: 1!important;
