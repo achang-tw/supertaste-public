@@ -62,6 +62,7 @@
 }
 .supertaste-coupon .coupon-item-wrap .coupon-item-cta{
 	justify-content: center;
+	display: block;
 }
 .supertaste-coupon .coupon-item-left .coupon-item-content{
 	position: relative;
@@ -160,7 +161,7 @@
 }
 
 .supertaste-coupon .coupon-item-logo{
-	max-width: 90%;
+	max-width: 40%;
 	margin: auto;
 }
 
