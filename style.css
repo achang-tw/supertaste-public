@@ -156,7 +156,8 @@
 	margin: auto;
 }
 
-.supertaste-coupon .cta-wrap{
+.supertaste-coupon .cta-wrap,
+.supertaste-coupon .coupon-item-logo{
 	line-height: 1!important;
 }
 
