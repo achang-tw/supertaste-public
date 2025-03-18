@@ -71,6 +71,7 @@
 .supertaste-coupon .cta-wrap{
 	word-break: keep-all;
 	text-align: center;
+	align-self: flex-start;
 }
 .supertaste-coupon .coupon-item-bg{
 	height: 100%;
