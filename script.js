@@ -138,22 +138,21 @@ const SuperCoupon = {
 												</div>
 												<div class="coupon-item-content">
 													<div class="coupon-item-content-wrap">
-														<div class="coupon-item-logo">
-															<picture>
-																<source srcset="https://linsly-achang.github.io/supertaste-public/coupon-icon-mo.jpg" media="(max-width: 768px)">
-																<img src="https://linsly-achang.github.io/supertaste-public/coupon-icon-pc.jpg" alt="">
-															</picture>
-														</div>
 														<div class="coupon-item-title">${coupon.title}</div>
-														<div class="coupon-item-info">${coupon.title_info}</div>` +
+														<div class="coupon-item-info">${coupon.title_info}</div>
+														<div class="cta-title">${coupon.cta_title}</div>` +
 														(coupon.info_link ? `<div class="coupon-item-info-link"><a href="${coupon.info_link}" target="_blank">查看店家資訊</a></div>` : '') +
 													`</div>
 												</div>
 											</div>
 											<div class="coupon-item-cta">
 												<div class="cta-wrap">
-													<div class="cta-title">${coupon.cta_title}</div>
-													<div class="cta-info">${coupon.cta_info}</div>
+													<div class="coupon-item-logo">
+														<picture>
+															<source srcset="https://linsly-achang.github.io/supertaste-public/coupon-icon-mo.jpg" media="(max-width: 768px)">
+															<img src="https://linsly-achang.github.io/supertaste-public/coupon-icon-pc.jpg" alt="">
+														</picture>
+													</div>
 													<div class="cta-btn"><a href="${coupon.link}" target="_blank">${coupon.cta_btn}</a></div>
 												</div>
 											</div>
