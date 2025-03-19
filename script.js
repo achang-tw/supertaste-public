@@ -123,7 +123,7 @@ const SuperCoupon = {
 		const validCoupons = this.validCoupons(this.coupons);
 		if(validCoupons.length > 0){
 			Array.from(document.querySelectorAll('.supertaste-coupon .coupon-list')).map(container => {
-				container.innerHTML = this.pickCoupons(this.coupons, 1).map(coupon => {
+				container.innerHTML = this.pickCoupons(validCoupons, 1).map(coupon => {
 					if(coupon.title_info){
 						coupon.title_info = coupon.title_info.replace(/\n/g, '<br>');
 					}
