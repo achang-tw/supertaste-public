@@ -107,6 +107,13 @@
 	line-height: 1.8 !important;
 }
 
+.supertaste-coupon .coupon-item-info .location-icon{
+	margin-right: 4px;
+}
+.supertaste-coupon .coupon-item-info span{
+	vertical-align: middle;
+}
+
 .supertaste-coupon .coupon-item-info-link{
 	margin-top: 1em;
 }

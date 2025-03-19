@@ -140,7 +140,7 @@ const SuperCoupon = {
 													<div class="coupon-item-content-wrap">
 														<div class="coupon-item-title">${coupon.title}</div>
 														<div class="coupon-item-info">
-															<img src="https://linsly-achang.github.io/supertaste-public/location.svg" />
+															<img class="location-icon" src="https://linsly-achang.github.io/supertaste-public/location.svg" />
 															<span>${coupon.title_info}</span>
 														</div>
 														<div class="cta-title">${coupon.cta_title}</div>` +
