@@ -113,8 +113,8 @@ const SuperCoupon = {
 	validCoupons(coupons){
 		return coupons.filter(coupon => {
 			const now = new Date();
-			const start = new Date(coupon.start);
-			const end = new Date(coupon.end);
+			const start = new Date(coupon.start.replace(/\//g, '-'));
+			const end = new Date(coupon.end.replace(/\//g, '-'));
 
 			return now >= start && now <= end;
 		});
