@@ -95,6 +95,7 @@ const SuperCoupon = {
 		const coupons = JSON.parse(localStorage.getItem('superCoupons')||"{}");
 
 		if(coupons && coupons.coupons && coupons.time && new Date().getTime() < coupons.time){
+			this.coupons = this.validCoupons(coupons.coupons);
 			this.drawHTML();
 		}else{
 			fetch('https://ads.achang.tw/super-coupon/index.php').then(res => res.json()).then(data => {
