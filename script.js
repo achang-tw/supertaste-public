@@ -95,7 +95,6 @@ const SuperCoupon = {
 		const coupons = JSON.parse(localStorage.getItem('superCoupons')||"{}");
 
 		if(coupons && coupons.coupons && coupons.time && new Date().getTime() < coupons.time){
-			this.coupons = this.validCoupons(coupons.coupons);
 			this.drawHTML();
 		}else{
 			fetch('https://ads.achang.tw/super-coupon/index.php').then(res => res.json()).then(data => {
@@ -120,7 +119,8 @@ const SuperCoupon = {
 		});
 	},
 	async drawHTML(){
-		if(this.coupons.length > 0){
+		const validCoupons = this.validCoupons(this.coupons);
+		if(validCoupons.length > 0){
 			Array.from(document.querySelectorAll('.supertaste-coupon .coupon-list')).map(container => {
 				container.innerHTML = this.pickCoupons(this.coupons, 1).map(coupon => {
 					if(coupon.title_info){
