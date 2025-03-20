@@ -227,7 +227,7 @@
 		padding: 10px;
 		border-top-left-radius: 10px;
 		border-top-right-radius: 10px;
-		box-shadow: 8px -3px 4px 0px #E1A67633;
+		box-shadow: 0 -3px 4px 0px #E1A67633;
 	}
 
 	.supertaste-coupon .coupon-item-img-wrap{
@@ -287,9 +287,11 @@
 	.supertaste-coupon .cta-btn a{
 		background-color: #FFC338;
 		padding: 0 10%;
-		box-shadow: 0px 1.53px 7.23px -1.53px #E1A676;
+		box-shadow: 0px 1.5px 7px -1.5px #E1A676;
 	}
 	.supertaste-coupon .coupon-item-img-wrap .coupon-item-img{
 		border-radius: 5px;
+		flex-grow: 1;
+		padding-top: 90%;
 	}
 }
