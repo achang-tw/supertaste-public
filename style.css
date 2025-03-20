@@ -262,6 +262,8 @@
 		grid-auto-columns: max-content;
 		column-gap: 10px;
 		background-color: #FFF8E7;
+		border-radius: 5px;
+		overflow: hidden;
 	}
 
 	.supertaste-coupon .coupon-item-logo{
