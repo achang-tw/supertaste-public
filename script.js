@@ -61,7 +61,7 @@ const SuperCoupon = {
 		base.classList.add('supertaste-coupon', 'splide');
 		base.innerHTML = `
 		<div class="splide__track">
-			<div class="collapse-icon">
+			<div class="collapse-icon" onclick="SuperCoupon.collapse()">
 				<svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M12.42 0.451988L13.48 1.51299L7.70298 7.29199C7.61041 7.38514 7.50034 7.45907 7.37909 7.50952C7.25784 7.55997 7.12781 7.58594 6.99648 7.58594C6.86515 7.58594 6.73512 7.55997 6.61387 7.50952C6.49262 7.45907 6.38255 7.38514 6.28998 7.29199L0.50998 1.51299L1.56998 0.452987L6.99498 5.87699L12.42 0.451988Z" fill="#8A8A8A"/>
 				</svg>
@@ -232,5 +232,9 @@ const SuperCoupon = {
 				}
 			});
 		}
+	},
+	collapse(){
+		const coupon = document.querySelector('.supertaste-coupon');
+		coupon.classList.toggle('collapsed');
 	}
 };
