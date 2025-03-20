@@ -278,4 +278,9 @@
 	.supertaste-coupon .cta-btn a{
 		margin-top: 0;
 	}
+
+	.supertaste-coupon .cta-btn a{
+		background-color: #FFC338;
+		padding: 0 10%;
+	}
 }
