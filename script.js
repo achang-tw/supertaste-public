@@ -155,6 +155,7 @@ const SuperCoupon = {
 															<img src="https://linsly-achang.github.io/supertaste-public/coupon-icon-pc.jpg" alt="">
 														</picture>
 													</div>
+													<div class="cta-title">${coupon.cta_title}</div>
 													<div class="cta-btn"><a href="${coupon.link}" target="_blank">${coupon.cta_btn}</a></div>
 												</div>
 											</div>

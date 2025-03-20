@@ -192,6 +192,12 @@
 	height: 100%;
 }
 
+@media screen and (max-width: 769px) {
+	.supertaste-coupon .cta-wrap .cta-title{
+		display: none;
+	}
+}
+
 @media screen and (max-width: 768px) {
 	.supertaste-coupon{
 		position: fixed;
@@ -226,5 +232,20 @@
 	.supertaste-coupon .coupon-item-content-wrap .coupon-item-info,
 	.supertaste-coupon .coupon-item-content-wrap .cta-title{
 		display: none;
+	}
+
+	.supertaste-coupon .cta-wrap{
+		display: grid;
+		grid-template-areas: "img title" "img btn";
+	}
+
+	.supertaste-coupon .coupon-item-logo{
+		grid-area: img;
+	}
+	.supertaste-coupon .cta-wrap .cta-title{
+		grid-area: title;
+	}
+	.supertaste-coupon .cta-btn{
+		grid-area: btn;
 	}
 }
