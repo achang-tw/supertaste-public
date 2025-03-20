@@ -251,11 +251,12 @@
 	}
 
 	.supertaste-coupon .cta-wrap{
-		display: grid;
+		display: inline-grid;
 		grid-template-areas: "img title" "img btn";
 		text-align: left;
 		grid-auto-columns: max-content;
 		gap: 10px;
+		background-color: #FFF8E7;
 	}
 
 	.supertaste-coupon .coupon-item-logo{
