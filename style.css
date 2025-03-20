@@ -245,6 +245,7 @@
 	.supertaste-coupon .coupon-item-content-wrap{
 		display: flex;
 		gap: 8px;
+		align-items: center;
 	}
 	.supertaste-coupon .coupon-item-content-wrap .coupon-item-info,
 	.supertaste-coupon .coupon-item-content-wrap .cta-title{
