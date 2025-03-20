@@ -253,6 +253,7 @@
 	.supertaste-coupon .cta-wrap{
 		display: grid;
 		grid-template-areas: "img title" "img btn";
+		text-align: left;
 	}
 
 	.supertaste-coupon .coupon-item-logo{
