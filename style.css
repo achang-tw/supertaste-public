@@ -220,9 +220,11 @@
 	.supertaste-coupon .coupon-item-wrap{
 		position: relative;
 		display: grid;
-		grid-template-areas: "img content" "img cta";
+		grid-template-areas: "img content content"
+				"img cta cta";
 		gap: 0;
 		background-color: #FFF;
+		grid-auto-columns: 1fr;
 	}
 
 	.supertaste-coupon .coupon-item-img-wrap{
