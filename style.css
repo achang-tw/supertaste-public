@@ -318,9 +318,10 @@
 		content: "";
 		position: absolute;
 		top: 21px;
-		left: 10px;
-		right: 10px;
+		left: 0;
+		right: 0;
 		height: 1px;
 		background-color: #EDEDED;
+		padding: 8px;
 	}
 }
