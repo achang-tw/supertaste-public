@@ -332,4 +332,8 @@
 	.supertaste-coupon.collapsed .collapse-icon svg{
 		transform: scaleY(-1);
 	}
+	.supertaste-coupon .collapse-icon{
+		left: 0;
+		text-align: right;
+	}
 }
