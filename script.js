@@ -36,7 +36,7 @@ const SuperCoupon = {
 		}
 	},
 	async addBaseElement(){
-		const targets = ['article p:not([class*="meta"])', '.entry-content p', 'header', 'h1'];
+		const targets = ['.post-entry>:first-child', 'article p:not([class*="meta"])', '.entry-content p'];
 		var target = null;
 		for(let i = 0; i < targets.length; i++){
 			if(document.querySelector(targets[i])){
@@ -49,7 +49,7 @@ const SuperCoupon = {
 			var xpath = this.getXPath(targetElement);
 	
 			var element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-			element.after(await this.baseElement());
+			element.before(await this.baseElement());
 		}else{
 			var xpath = this.getXPath('main');
 			var element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
