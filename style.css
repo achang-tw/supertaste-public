@@ -205,7 +205,7 @@
 		left: 0;
 		right: 0;
 		margin: 0;
-		z-index: 1000;
+		z-index: 100000;
 		height: auto;
 	}
 
@@ -264,5 +264,9 @@
 	}
 	.supertaste-coupon .cta-btn{
 		grid-area: btn;
+	}
+
+	.supertaste-coupon .coupon-item-wrap .coupon-item-content, .supertaste-coupon .coupon-item-wrap .coupon-item-cta{
+		padding: 0;
 	}
 }
