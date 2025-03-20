@@ -294,4 +294,7 @@
 		flex-grow: 1;
 		padding-top: 90%;
 	}
+	.supertaste-coupon .coupon-item-title{
+		font-size: 16px !important;
+	}
 }
