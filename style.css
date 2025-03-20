@@ -311,6 +311,9 @@
 		right: 10px;
 		z-index: 10;
 	}
+	.supertaste-coupon .collapse-icon svg{
+		vertical-align: top;
+	}
 	.supertaste-coupon .coupon-item-wrap::before {
 		content: "";
 		position: absolute;
