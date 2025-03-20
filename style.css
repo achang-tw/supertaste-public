@@ -187,10 +187,6 @@
 	border-radius: 0 0 10px 10px;
 }
 
-.supertaste-coupon .splide__track{
-	height: 100%;
-}
-
 @media screen and (min-width: 769px) {
 	.supertaste-coupon .cta-wrap .cta-title{
 		display: none;
