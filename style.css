@@ -208,10 +208,16 @@
 		z-index: 1000;
 	}
 
+	.supertaste-coupon .coupon-item-bg{
+		display: none;
+	}
+
 	.supertaste-coupon .coupon-item-wrap{
+		position: relative;
 		display: grid;
 		grid-template-areas: "img content" "img cta";
 		gap: 0;
+		background-color: #FFF;
 	}
 
 	.supertaste-coupon .coupon-item-img-wrap{
