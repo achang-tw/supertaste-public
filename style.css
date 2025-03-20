@@ -192,7 +192,7 @@
 	height: 100%;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (min-width: 769px) {
 	.supertaste-coupon .cta-wrap .cta-title{
 		display: none;
 	}
