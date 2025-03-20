@@ -211,6 +211,7 @@
 	.supertaste-coupon .coupon-item-wrap{
 		display: grid;
 		grid-template-areas: "img content" "img cta";
+		gap: 0;
 	}
 
 	.supertaste-coupon .coupon-item-img-wrap{
