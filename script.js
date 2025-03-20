@@ -61,9 +61,11 @@ const SuperCoupon = {
 		base.classList.add('supertaste-coupon', 'splide');
 		base.innerHTML = `
 		<div class="splide__track">
-			<svg class="collapse-icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M6.71 0.451987L7.24 1.51299L4.3515 7.29199C4.30522 7.38514 4.25018 7.45907 4.18956 7.50952C4.12893 7.55997 4.06392 7.58594 3.99825 7.58594C3.93259 7.58594 3.86758 7.55997 3.80695 7.50952C3.74633 7.45907 3.69129 7.38514 3.645 7.29199L0.755005 1.51299L1.28501 0.452987L3.9975 5.87699L6.71 0.451987Z" fill="#8A8A8A"/>
-			</svg>
+			<div class="collapse-icon">
+				<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M6.71 0.451987L7.24 1.51299L4.3515 7.29199C4.30522 7.38514 4.25018 7.45907 4.18956 7.50952C4.12893 7.55997 4.06392 7.58594 3.99825 7.58594C3.93259 7.58594 3.86758 7.55997 3.80695 7.50952C3.74633 7.45907 3.69129 7.38514 3.645 7.29199L0.755005 1.51299L1.28501 0.452987L3.9975 5.87699L6.71 0.451987Z" fill="#8A8A8A"/>
+				</svg>
+			</div>
 
 
 			<div class="coupon-list splide__list"></div>
