@@ -46,6 +46,7 @@
     padding-top: 86%;
     background-position: center;
     background-size: cover;
+	border-radius: 15px;
 }
 .supertaste-coupon .coupon-item-wrap img{
 	max-height: 100%;
