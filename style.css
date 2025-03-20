@@ -215,6 +215,7 @@
 
 	.supertaste-coupon .coupon-item-img-wrap{
 		grid-area: img;
+		width: 100%;
 	}
 
 	.supertaste-coupon .coupon-item-content{
