@@ -272,6 +272,7 @@
 	}
 	.supertaste-coupon .cta-wrap .cta-title{
 		grid-area: title;
+		line-height: 1.5!important;
 	}
 	.supertaste-coupon .cta-btn{
 		grid-area: btn;
