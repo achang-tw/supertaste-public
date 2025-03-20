@@ -208,6 +208,10 @@
 		z-index: 1000;
 	}
 
+	.supertaste-coupon .coupon-item{
+		display: block;
+	}
+
 	.supertaste-coupon .coupon-item-bg{
 		display: none;
 	}
