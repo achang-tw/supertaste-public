@@ -307,9 +307,10 @@
 	}
 	.supertaste-coupon .collapse-icon{
 		position: absolute;
-		top: 8px;
-		right: 10px;
+		top: 0;
+		right: 0;
 		z-index: 10;
+		padding: 8px;
 	}
 	.supertaste-coupon .collapse-icon svg{
 		vertical-align: top;
