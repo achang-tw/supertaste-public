@@ -37,10 +37,10 @@
 }
 .supertaste-coupon .coupon-item-img-wrap{
 	flex-shrink: 0;
-	position: relative;
-	overflow: hidden;
-	border-radius: 15px;
-	width: 42%;
+    position: relative;
+    overflow: hidden;
+    width: 28.5%;
+	padding: 15px 10px;
 }
 .supertaste-coupon .coupon-item-img-wrap .coupon-item-img{
     padding-top: 86%;
@@ -58,18 +58,19 @@
 .supertaste-coupon .coupon-item-wrap .coupon-item-cta{
 	display: flex;
 	align-items: center;
-	flex-grow: 1;
 	padding: 10px;
 }
 .supertaste-coupon .coupon-item-wrap .coupon-item-cta{
-	justify-content: center;
 	display: block;
+	width: 35%;
+	flex-shrink: 0;
 }
-.supertaste-coupon .coupon-item-left .coupon-item-content{
+.supertaste-coupon .coupon-item-content{
 	position: relative;
 	height: 100%;
+	flex-grow: 1;
 }
-.supertaste-coupon .coupon-item-left .coupon-item-content .coupon-item-content-wrap{
+.supertaste-coupon .coupon-item-content .coupon-item-content-wrap{
 	margin-left: 0;
 	padding-left: 4%;
 }

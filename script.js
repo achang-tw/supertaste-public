@@ -133,21 +133,19 @@ const SuperCoupon = {
 								coupon = `<div class="coupon-item splide__slide">
 									<div class="coupon-item-container">
 										<div class="coupon-item-wrap">
-											<div class="coupon-item-left">
-												<div class="coupon-item-img-wrap">
-													<div class="coupon-item-img" style="background-image:url(${coupon.image})"></div>
-												</div>
-												<div class="coupon-item-content">
-													<div class="coupon-item-content-wrap">
-														<div class="coupon-item-title">${coupon.title}</div>
-														<div class="coupon-item-info">
-															<img class="location-icon" src="https://linsly-achang.github.io/supertaste-public/location.svg" />
-															<span>${coupon.title_info}</span>
-														</div>
-														<div class="cta-title">${coupon.cta_title}</div>` +
-														(coupon.info_link ? `<div class="coupon-item-info-link"><a href="${coupon.info_link}" target="_blank">看店家報導</a></div>` : '') +
-													`</div>
-												</div>
+											<div class="coupon-item-img-wrap">
+												<div class="coupon-item-img" style="background-image:url(${coupon.image})"></div>
+											</div>
+											<div class="coupon-item-content">
+												<div class="coupon-item-content-wrap">
+													<div class="coupon-item-title">${coupon.title}</div>
+													<div class="coupon-item-info">
+														<img class="location-icon" src="https://linsly-achang.github.io/supertaste-public/location.svg" />
+														<span>${coupon.title_info}</span>
+													</div>
+													<div class="cta-title">${coupon.cta_title}</div>` +
+													(coupon.info_link ? `<div class="coupon-item-info-link"><a href="${coupon.info_link}" target="_blank">看店家報導</a></div>` : '') +
+												`</div>
 											</div>
 											<div class="coupon-item-cta">
 												<div class="cta-wrap">
