@@ -324,4 +324,11 @@
 		height: 1px;
 		background-color: #EDEDED;
 	}
+
+	.supertaste-coupon.collapsed{
+		transform: translateY(calc(100% - 22px));
+	}
+	.supertaste-coupon.collapsed .collapse-icon svg{
+		transform: scaleY(-1);
+	}
 }
