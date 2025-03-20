@@ -254,7 +254,7 @@
 	}
 
 	.supertaste-coupon .cta-wrap{
-		display: inline-grid;
+		display: grid;
 		grid-template-areas: "img title" "img btn";
 		text-align: left;
 		grid-auto-columns: max-content;
