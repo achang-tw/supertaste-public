@@ -1,6 +1,9 @@
 const SuperCoupon = {
 	coupons: [],
 	async init(){
+		if(document.body.classList.contains('home')){
+			return;
+		}
 		await new Promise(resolve => setTimeout(resolve, 1000));
 
 		try{
