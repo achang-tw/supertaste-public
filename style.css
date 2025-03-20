@@ -73,7 +73,6 @@
 }
 .supertaste-coupon .coupon-item-content .coupon-item-content-wrap{
 	margin-left: 0;
-	padding-left: 4%;
 }
 .supertaste-coupon .cta-wrap{
 	word-break: keep-all;
@@ -201,5 +200,31 @@
 		right: 0;
 		margin: 0;
 		z-index: 1000;
+	}
+
+	.supertaste-coupon .coupon-item-wrap{
+		display: grid;
+		grid-template-areas: "img content" "img cta";
+	}
+
+	.supertaste-coupon .coupon-item-img-wrap{
+		grid-area: img;
+	}
+
+	.supertaste-coupon .coupon-item-content{
+		grid-area: content;
+	}
+
+	.supertaste-coupon .coupon-item-wrap .coupon-item-cta{
+		grid-area: cta;
+	}
+
+	.supertaste-coupon .coupon-item-content-wrap{
+		display: flex;
+		gap: 8px;
+	}
+	.supertaste-coupon .coupon-item-content-wrap .coupon-item-info,
+	.supertaste-coupon .coupon-item-content-wrap .cta-title{
+		display: none;
 	}
 }
