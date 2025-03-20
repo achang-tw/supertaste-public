@@ -222,9 +222,10 @@
 		display: grid;
 		grid-template-areas: "img content content"
 				"img cta cta";
-		gap: 0;
+		gap: 10px;
 		background-color: #FFF;
 		grid-auto-columns: 1fr;
+		padding: 10px;
 	}
 
 	.supertaste-coupon .coupon-item-img-wrap{
@@ -283,5 +284,8 @@
 		background-color: #FFC338;
 		padding: 0 10%;
 		box-shadow: 0px 1.53px 7.23px -1.53px #E1A676;
+	}
+	.supertaste-coupon .coupon-item-img-wrap .coupon-item-img{
+		border-radius: 5px;
 	}
 }
