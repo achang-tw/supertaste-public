@@ -125,7 +125,6 @@ const SuperCoupon = {
 			const now = new Date();
 			const start = this.stringToDate(coupon.start);
 			const end = this.stringToDate(coupon.end);
-			console.log(now, start, end);
 
 			return now >= start && now <= end;
 		});
