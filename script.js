@@ -132,6 +132,7 @@ const SuperCoupon = {
 	},
 	stringToDate(dateString){
 		dateString = dateString.replace(/\//g, '-');
+		console.log(dateString);
 		const [datePart, timePart] = dateString.split(' ');
 		const [year, month, day] = datePart.split('-').map(Number);
 		const [hours, minutes, seconds] = timePart.split(':').map(Number);
