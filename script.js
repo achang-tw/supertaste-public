@@ -124,13 +124,14 @@ const SuperCoupon = {
 	validCoupons(coupons){
 		return coupons.filter(coupon => {
 			const now = new Date();
-			const start = new Date(coupon.start.replace(/\//g, '-'));
-			const end = new Date(coupon.end.replace(/\//g, '-'));
+			const start = this.stringToDate(coupon.start);
+			const end = this.stringToDate(coupon.end);
 
 			return now >= start && now <= end;
 		});
 	},
 	stringToDate(dateString){
+		dateString = dateString.replace(/\//g, '-');
 		const [datePart, timePart] = dateString.split(' ');
 		const [year, month, day] = datePart.split('-').map(Number);
 		const [hours, minutes, seconds] = timePart.split(':').map(Number);
