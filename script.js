@@ -104,7 +104,7 @@ const SuperCoupon = {
 	async loadCoupons(){
 		const coupons = JSON.parse(localStorage.getItem('superCoupons')||"{}");
 
-		if(coupons && coupons.coupons && coupons.time && new Date().getTime() < coupons.time){
+		if(coupons && coupons.coupons && coupons.coupons.length > 0 && coupons.time && new Date().getTime() < coupons.time){
 			this.coupons = this.validCoupons(coupons.coupons);
 			this.drawHTML();
 		}else{
