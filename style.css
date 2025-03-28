@@ -6,6 +6,7 @@
 	font-family: "Noto Sans TC";
 	font-size: 14px !important;
 	line-height: 1.5;
+	overflow: hidden;
 }
 .supertaste-coupon.loading{
 	display: none;
