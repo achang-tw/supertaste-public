@@ -7,6 +7,9 @@
 	font-size: 14px !important;
 	line-height: 1.5;
 }
+.supertaste-coupon.loading{
+	display: none;
+}
 .supertaste-coupon .coupon-list{
 	position: relative;
 }

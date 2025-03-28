@@ -58,7 +58,7 @@ const SuperCoupon = {
 	},
 	async baseElement() {
 		const base = document.createElement('div');
-		base.classList.add('supertaste-coupon', 'splide');
+		base.classList.add('supertaste-coupon', 'splide', 'loading');
 		base.innerHTML = `
 		<div class="splide__track">
 			<div class="collapse-icon" onclick="SuperCoupon.collapse()">
@@ -218,6 +218,7 @@ const SuperCoupon = {
 					return coupon;
 				}).join('');
 			});
+			document.querySelector('.supertaste-coupon').classList.remove('loading');
 		}
 	},
 	loadFont(){
