@@ -8,6 +8,9 @@
 	line-height: 1.5;
 	overflow: hidden;
 }
+.supertaste-coupon *{
+	margin: 0;
+}
 .supertaste-coupon.loading{
 	display: none;
 }
