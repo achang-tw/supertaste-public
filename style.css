@@ -238,7 +238,7 @@
 		display: grid;
 		grid-template-areas: "img content content"
 				"img cta cta";
-		gap: 10px;
+		gap: 10px 12px;
 		background-color: #FFF;
 		grid-auto-columns: 1fr;
 		padding: 10px;
