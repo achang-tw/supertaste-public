@@ -309,7 +309,10 @@
 	.supertaste-coupon .coupon-item-img-wrap .coupon-item-img{
 		border-radius: 5px;
 		flex-grow: 1;
-		padding-top: 90%;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
 	}
 	.supertaste-coupon .coupon-item-title{
 		font-size: 16px !important;
