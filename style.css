@@ -194,9 +194,9 @@
 		display: flex;
 		gap: 10px;
 		position: absolute;
-		top: 6%;
-		left: 3%;
-		right: 3%;
+		top: 4.5%;
+		left: 2.8%;
+		right: 2.8%;
 		bottom: 9%;
 		z-index: 10;
 	}
