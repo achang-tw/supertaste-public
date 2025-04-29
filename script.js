@@ -1,5 +1,6 @@
 const SuperCoupon = {
 	coupons: [],
+	loaded: false,
 	async init(){
 		if(document.body.classList.contains('home')){
 			return;
@@ -11,6 +12,7 @@ const SuperCoupon = {
 			await this.loadStyles();
 			await this.loadCoupons();
 			this.loadFont();
+			this.loaded = true;
 		}catch(e){
 			console.error('loaded coupons failed!', e);
 		}
@@ -247,3 +249,21 @@ const SuperCoupon = {
 		coupon.classList.toggle('collapsed');
 	}
 };
+
+window.onload = () => {
+	if(!SuperCoupon.loaded){
+    	SuperCoupon.init();
+	}
+}
+
+document.addEventListener('scroll', () => {
+	if(!SuperCoupon.loaded){
+		SuperCoupon.init();
+	}
+}, { once: true });
+
+document.addEventListener('pointermove', () => {
+	if(!SuperCoupon.loaded){
+		SuperCoupon.init();
+	}
+}, { once: true });
