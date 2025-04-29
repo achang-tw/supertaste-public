@@ -232,6 +232,7 @@
 		z-index: 100000;
 		height: auto;
 		transition: transform 0.3s;
+		overflow: visible;
 	}
 
 	.supertaste-coupon .coupon-item{
@@ -250,11 +251,8 @@
 		gap: 10px 12px;
 		background-color: #FFF;
 		grid-auto-columns: 1fr;
-		padding: 10px;
-		border-top-left-radius: 10px;
-		border-top-right-radius: 10px;
+		padding: 16px 10px;
 		box-shadow: 0 -3px 4px 0px #E1A67633;
-		padding-top: 30px;
 	}
 
 	.supertaste-coupon .coupon-item-img-wrap{
@@ -333,21 +331,38 @@
 	.supertaste-coupon .collapse-icon{
 		position: absolute;
 		top: 0;
-		right: 0;
+		left: 0;
 		z-index: 10;
-		padding: 8px;
+		padding: 8px 10px;
+		background: #f9f9f9;
+		transform: translateY(-100%);
+		display: flex;
+		border-radius: 5px;
+		box-shadow: -1px -1px 4px 0px #5D5D5D99;
 	}
 	.supertaste-coupon .collapse-icon svg{
 		vertical-align: top;
 	}
-	.supertaste-coupon .coupon-item-wrap::before {
+	.supertaste-coupon .coupon-item-wrap::before{
 		content: "";
 		position: absolute;
-		top: 21px;
-		left: 10px;
-		right: 10px;
-		height: 1px;
-		background-color: #EDEDED;
+		top: 0;
+		left: 0;
+		height: 3px;
+		width: 50px;
+		height: 22px;
+		background-color: #F9F9F9;
+		transform: translateY(-100%);
+
+	}
+	.supertaste-coupon .coupon-item-wrap::before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 3px;
+		background-color: #F9F9F9;
 	}
 
 	.supertaste-coupon.collapsed{
