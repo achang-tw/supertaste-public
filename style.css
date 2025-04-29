@@ -13,6 +13,7 @@
 }
 .supertaste-coupon *{
 	margin: 0;
+	box-sizing: border-box;
 }
 .supertaste-coupon.loading{
 	display: none;
