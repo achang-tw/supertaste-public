@@ -343,7 +343,7 @@
 		justify-content: center;
 		align-items: center;
 		border-radius: 5px 5px 0 0;
-		box-shadow: -1px -1px 4px 0px #5D5D5D99;
+		box-shadow: -1px -4px 4px 0px #5D5D5D99;
 	}
 	.supertaste-coupon .collapse-icon svg{
 		vertical-align: top;
