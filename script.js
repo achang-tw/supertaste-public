@@ -2,19 +2,21 @@ const SuperCoupon = {
 	coupons: [],
 	loaded: false,
 	async init(){
-		if(document.body.classList.contains('home')){
-			return;
-		}
-		await new Promise(resolve => setTimeout(resolve, 1000));
+		if(!SuperCoupon.loaded){
+			if(document.body.classList.contains('home')){
+				return;
+			}
+			await new Promise(resolve => setTimeout(resolve, 1000));
 
-		try{
-			await this.addBaseElement();
-			await this.loadStyles();
-			await this.loadCoupons();
-			this.loadFont();
-			this.loaded = true;
-		}catch(e){
-			console.error('loaded coupons failed!', e);
+			try{
+				await this.addBaseElement();
+				await this.loadStyles();
+				await this.loadCoupons();
+				this.loadFont();
+				this.loaded = true;
+			}catch(e){
+				console.error('loaded coupons failed!', e);
+			}
 		}
 	},
 	getXPath(element) {
@@ -251,19 +253,13 @@ const SuperCoupon = {
 };
 
 window.onload = () => {
-	if(!SuperCoupon.loaded){
-    	SuperCoupon.init();
-	}
+	SuperCoupon.init();
 }
 
 document.addEventListener('scroll', () => {
-	if(!SuperCoupon.loaded){
-		SuperCoupon.init();
-	}
+	SuperCoupon.init();
 }, { once: true });
 
 document.addEventListener('pointermove', () => {
-	if(!SuperCoupon.loaded){
-		SuperCoupon.init();
-	}
+	SuperCoupon.init();
 }, { once: true });
