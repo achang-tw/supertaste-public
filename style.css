@@ -368,13 +368,9 @@
 	}
 
 	.supertaste-coupon.collapsed{
-		transform: translateY(calc(100% - 22px));
+		transform: translateY(100%);
 	}
 	.supertaste-coupon.collapsed .collapse-icon svg{
 		transform: scaleY(-1);
-	}
-	.supertaste-coupon.collapsed .collapse-icon{
-		left: 0;
-		text-align: right;
 	}
 }
