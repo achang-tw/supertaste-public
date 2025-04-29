@@ -368,7 +368,7 @@
 	}
 
 	.supertaste-coupon.collapsed{
-		transform: translateY(calc(100% - 3x));
+		transform: translateY(calc(100% - 3px));
 	}
 	.supertaste-coupon.collapsed .collapse-icon svg{
 		transform: scaleY(-1);
