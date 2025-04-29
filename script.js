@@ -6,7 +6,7 @@ const SuperCoupon = {
 			if(document.body.classList.contains('home')){
 				return;
 			}
-			await new Promise(resolve => setTimeout(resolve, 1000));
+			// await new Promise(resolve => setTimeout(resolve, 1000));
 
 			try{
 				await this.addBaseElement();
