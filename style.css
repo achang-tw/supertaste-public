@@ -332,11 +332,15 @@
 		position: absolute;
 		top: 0;
 		left: 0;
+		width: 50px;
+		height: 22px;
 		z-index: 10;
-		padding: 8px 10px;
+		padding: 0;
 		background: #f9f9f9;
 		transform: translateY(-100%);
 		display: flex;
+		justify-content: center;
+		align-items: center;
 		border-radius: 5px;
 		box-shadow: -1px -1px 4px 0px #5D5D5D99;
 	}
@@ -349,8 +353,6 @@
 		top: 0;
 		left: 0;
 		height: 3px;
-		width: 50px;
-		height: 22px;
 		background-color: #F9F9F9;
 		transform: translateY(-100%);
 
