@@ -351,6 +351,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
+		border-radius: 5px 5px 0 0;
 		box-shadow: -1px -4px 4px 0px #5D5D5D60;
 	}
 	.supertaste-coupon .collapse-icon svg{
