@@ -338,7 +338,7 @@
 		z-index: 10;
 		padding: 0;
 		background: #F9F9F9;
-		transform: translateY(-100%);
+		transform: translateY(-99%);
 		display: flex;
 		justify-content: center;
 		align-items: center;
