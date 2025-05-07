@@ -215,6 +215,7 @@
 
 	.supertaste-coupon .coupon-item-logo img{
 		border-radius: 0 0 10px 10px;
+		max-width: 100% !important;
 	}
 
 	.supertaste-coupon .collapse-icon{
