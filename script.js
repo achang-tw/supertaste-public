@@ -41,7 +41,6 @@ const SuperCoupon = {
 	},
 	async addBaseElement(){
 		const targets = ['.post-entry>:first-child', 'article p:not([class*="meta"])', '.entry-content p', 'section p:not([class*="meta"])'];
-		var target = null;
 		var element = null;
 		for(let i = 0; i < targets.length; i++){
 			for(let j = 0; j < document.querySelectorAll(targets[i]).length; j++){
@@ -51,7 +50,7 @@ const SuperCoupon = {
 				}
 			}
 		}
-		if(target){
+		if(element){
 			element.before(await this.baseElement());
 		}else{
 			var xpath = this.getXPath('main');
