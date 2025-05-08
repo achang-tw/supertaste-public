@@ -52,8 +52,15 @@ const SuperCoupon = {
 			var targetElement = document.querySelector(target);
 			var xpath = this.getXPath(targetElement);
 	
-			var element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-			element.before(await this.baseElement());
+			var result = document.evaluate(xpath, document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+			for (let i = 0; i < result.snapshotLength; i++) {
+				let el = result.snapshotItem(i);
+				if (el.checkVisibility()) {
+					var element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+					element.before(await this.baseElement());
+					break;
+				}
+			}
 		}else{
 			var xpath = this.getXPath('main');
 			var element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
