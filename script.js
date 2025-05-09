@@ -40,24 +40,24 @@ const SuperCoupon = {
 		}
 	},
 	async addBaseElement(){
-		const targets = ['.post-entry>:first-child:not([class*="hidden"])', 'article p:not([class*="meta"]):not([class*="hidden"])', '.entry-content p:not([class*="hidden"])', 'section p:not([class*="meta"]):not([class*="hidden"])'];
+		const targets = ['.post-entry>:first-child', 'article p:not([class*="meta"])', '.entry-content p', 'section p:not([class*="meta"])'];
 		var target = null;
 		for(let i = 0; i < targets.length; i++){
-			if(document.querySelector(targets[i])){
-				target = targets[i];
-				break;
+			const elements = document.querySelectorAll(targets[i]);
+			for(const el of elements) {
+				if(el.checkVisibility()) {
+					target = el;
+					break;
+				}
 			}
+			if(target) break;
 		}
 		if(target){
-			var targetElement = document.querySelector(target);
-			var xpath = this.getXPath(targetElement);
-	
-			var element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-			element.before(await this.baseElement());
+			target.before(await this.baseElement());
 		}else{
 			var xpath = this.getXPath('main');
-			var element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-			element.prepend(await this.baseElement());
+			var target = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+			target.prepend(await this.baseElement());
 		}
 	},
 	async baseElement() {
