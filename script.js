@@ -40,7 +40,7 @@ const SuperCoupon = {
 		}
 	},
 	async addBaseElement(){
-		const targets = ['.post-entry h2', 'article h2:not([class*="meta"])', '.entry-content h2', 'section h2:not([class*="meta"])'];
+		const targets = ['.post-entry h2', 'article h2', '.entry-content h2', 'section h2'];
 		var target = null;
 
 		var visibleElementCount = 0;
