@@ -40,7 +40,7 @@ const SuperCoupon = {
 		}
 	},
 	async addBaseElement(){
-		const targets = ['h2:not([class*="meta"])'];
+		const targets = ['.post-entry>:first-child', 'article p:not([class*="meta"])', '.entry-content p', 'section p:not([class*="meta"])'];
 		var target = null;
 		for(let i = 0; i < targets.length; i++){
 			const elements = document.querySelectorAll(targets[i]);
