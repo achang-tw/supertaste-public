@@ -188,6 +188,11 @@ const SuperCoupon = {
 													<div class="cta-btn"><a href="${coupon.link}" target="_blank">${coupon.cta_btn}</a></div>
 												</div>
 											</div>
+											<div class="coupon-item-ext">
+												<a href="https://supertaste.tvbs.com.tw/offers" target="_blank">
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 15 15"><path d="M7.5,1.5a6,6,0,1,0,0,12a6,6,0,1,0,0,-12m0,1a5,5,0,1,1,0,10a5,5,0,1,1,0,-10ZM6.625,11l1.75,0l0,-4.5l-1.75,0ZM7.5,3.75a1,1,0,1,0,0,2a1,1,0,1,0,0,-2Z"></path></svg>
+												</a>
+											</div>
 										</div>
 										<div class="coupon-item-bg">
 											<picture>
