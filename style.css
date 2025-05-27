@@ -197,16 +197,23 @@
 	height: 100%;
 }
 
+.supertaste-coupon .coupon-item-ext,
+.supertaste-coupon .coupon-item-ext svg{
+	height: 15px;
+}
+
 .supertaste-coupon .coupon-item-ext{
 	position: absolute;
 	top: 10%;
 	right: 1%;
 	z-index: 100;
+	background-color: #FFF;
 }
 
 .supertaste-coupon .coupon-item-ext svg{
-	height: 15px;
-	width: auto;
+    width: auto;
+    fill: #00aecd;
+    vertical-align: top;
 }
 
 @media screen and (min-width: 769px) {
