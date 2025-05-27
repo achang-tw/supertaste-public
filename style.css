@@ -204,6 +204,11 @@
 	z-index: 100;
 }
 
+.supertaste-coupon .coupon-item-ext svg{
+	height: 15px;
+	width: auto;
+}
+
 @media screen and (min-width: 769px) {
 	.supertaste-coupon .coupon-item-wrap{
 		display: flex;
