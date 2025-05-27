@@ -17,6 +17,7 @@ const SuperCoupon = {
 			}catch(e){
 				console.error('loaded coupons failed!', e);
 			}
+			console.log('loaded coupons')
 		}
 	},
 	getXPath(element) {
