@@ -40,14 +40,21 @@ const SuperCoupon = {
 		}
 	},
 	async addBaseElement(){
-		const targets = ['.post-entry>:first-child', 'article p:not([class*="meta"])', '.entry-content p', 'section p:not([class*="meta"])'];
+		const targets = ['.post-entry h2', 'article h2:not([class*="meta"])', '.entry-content h2', 'section h2:not([class*="meta"])'];
 		var target = null;
+
+		var visibleElementCount = 0;
 		for(let i = 0; i < targets.length; i++){
 			const elements = document.querySelectorAll(targets[i]);
+			visibleElementCount = 0;
 			for(const el of elements) {
 				if(el.checkVisibility()) {
 					target = el;
-					break;
+					visibleElementCount++;
+					if (visibleElementCount === 2) {
+						target = el;
+						break;
+					}
 				}
 			}
 			if(target) break;
