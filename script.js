@@ -17,7 +17,6 @@ const SuperCoupon = {
 			}catch(e){
 				console.error('loaded coupons failed!', e);
 			}
-			console.log('loaded coupons')
 		}
 	},
 	getXPath(element) {
@@ -67,7 +66,6 @@ const SuperCoupon = {
 			var target = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 			target.prepend(await this.baseElement());
 		}
-		console.log(target)
 	},
 	async baseElement() {
 		const base = document.createElement('div');
