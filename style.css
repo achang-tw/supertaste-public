@@ -391,4 +391,8 @@
 	.supertaste-coupon.collapsed .collapse-icon svg{
 		transform: scaleY(-1);
 	}
+
+	.supertaste-coupon .coupon-item-ext{
+		top: 4%;
+	}
 }
