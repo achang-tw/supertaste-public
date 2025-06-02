@@ -242,12 +242,6 @@
 
 @media screen and (max-width: 768px) {
 	.supertaste-coupon{
-		/* position: fixed; */
-		bottom: 0;
-		left: 0;
-		right: 0;
-		/* margin: 0; */
-		z-index: 100000;
 		height: auto;
 		transition: transform 0.3s;
 		overflow: visible;
