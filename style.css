@@ -242,6 +242,7 @@
 
 @media screen and (max-width: 768px) {
 	.supertaste-coupon{
+		width: auto;
 		height: auto;
 		transition: transform 0.3s;
 		overflow: visible;
