@@ -388,6 +388,7 @@
 		right: 0;
 		height: 3px;
 		background-color: #F9F9F9;
+		display: none;
 	}
 
 	.supertaste-coupon.collapsed{
