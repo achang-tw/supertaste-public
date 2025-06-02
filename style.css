@@ -211,7 +211,7 @@
 
 .supertaste-coupon .coupon-item-ext svg{
     width: auto;
-    fill: #00aecd;
+    /* fill: #00aecd; */
     vertical-align: top;
 }
 
