@@ -252,6 +252,9 @@
 		transition: transform 0.3s;
 		overflow: visible;
 		filter: drop-shadow(0px 1px 3.4px #6F5F4840);
+		background-color: #F6F6F6;
+		border-radius: 10px;
+		padding: 3px;
 	}
 
 	.supertaste-coupon .coupon-item{
@@ -268,9 +271,11 @@
 		grid-template-areas: "img content content"
 				"img cta cta";
 		gap: 10px 12px;
-		background-color: #FFF;
+		background-color: #FFFCF6;
 		grid-auto-columns: 1fr;
 		padding: 16px 10px;
+		border-radius: 10px;
+		border: 1px solid #FFC338;
 	}
 
 	.supertaste-coupon .coupon-item-img-wrap{
