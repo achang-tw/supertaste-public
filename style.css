@@ -245,7 +245,6 @@
 		width: auto;
 		height: auto;
 		transition: transform 0.3s;
-		overflow: visible;
 		padding: 4px;
 	}
 
