@@ -19,26 +19,6 @@ const SuperCoupon = {
 			}
 		}
 	},
-	getXPath(element) {
-		if (element.id !== '') {
-			return `//*[@id="${element.id}"]`;
-		}
-		if (element === document.body) {
-			return '/html/body';
-		}
-
-		let ix = 0;
-		const siblings = element.parentNode.childNodes;
-		for (let i = 0; i < siblings.length; i++) {
-			const sibling = siblings[i];
-			if (sibling === element) {
-				return `${this.getXPath(element.parentNode)}/${element.tagName.toLowerCase()}[${ix + 1}]`;
-			}
-			if (sibling.nodeType === 1 && sibling.tagName === element.tagName) {
-				ix++;
-			}
-		}
-	},
 	async addBaseElement(){
 		const targets = ['.post-entry h2', 'article h2', '.entry-content h2'];
 		var target = null;
@@ -61,10 +41,6 @@ const SuperCoupon = {
 		}
 		if(target){
 			target.before(await this.baseElement());
-		}else{
-			var xpath = this.getXPath('main');
-			var target = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-			target.prepend(await this.baseElement());
 		}
 	},
 	async baseElement() {
@@ -77,7 +53,6 @@ const SuperCoupon = {
 					<path d="M12.42 0.451988L13.48 1.51299L7.70298 7.29199C7.61041 7.38514 7.50034 7.45907 7.37909 7.50952C7.25784 7.55997 7.12781 7.58594 6.99648 7.58594C6.86515 7.58594 6.73512 7.55997 6.61387 7.50952C6.49262 7.45907 6.38255 7.38514 6.28998 7.29199L0.50998 1.51299L1.56998 0.452987L6.99498 5.87699L12.42 0.451988Z" fill="#8A8A8A"/>
 				</svg>
 			</div>
-
 
 			<div class="coupon-list splide__list"></div>
 		</div>`;
