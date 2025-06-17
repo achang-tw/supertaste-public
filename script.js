@@ -20,25 +20,30 @@ const SuperCoupon = {
 		}
 	},
 	async addBaseElement(){
-		const targets = ['.post-entry h2', 'article h2', '.entry-content h2'];
-		var target = null;
+		const locateClass = '.supertaste-coupon-locate';
 
-		var visibleElementCount = 0;
-		for(let i = 0; i < targets.length; i++){
-			const elements = document.querySelectorAll(targets[i]);
-			visibleElementCount = 0;
-			for(const el of elements) {
-				if(el.checkVisibility()) {
-					target = el;
-					visibleElementCount++;
-					if (visibleElementCount === 2) {
+		var target = document.querySelector(locateClass);
+		if(!target){
+			const targets = ['.post-entry h2', 'article h2', '.entry-content h2'];
+
+			var visibleElementCount = 0;
+			for(let i = 0; i < targets.length; i++){
+				const elements = document.querySelectorAll(targets[i]);
+				visibleElementCount = 0;
+				for(const el of elements) {
+					if(el.checkVisibility()) {
 						target = el;
-						break;
+						visibleElementCount++;
+						if (visibleElementCount === 2) {
+							target = el;
+							break;
+						}
 					}
 				}
+				if(target) break;
 			}
-			if(target) break;
 		}
+		
 		if(target){
 			target.before(await this.baseElement());
 		}
