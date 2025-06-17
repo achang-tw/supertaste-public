@@ -95,7 +95,7 @@ const SuperCoupon = {
 			this.drawHTML();
 		}else{
 			fetch('https://ads.achang.tw/super-coupon/index.php').then(res => res.json()).then(data => {
-				const validCoupons = this.validCoupons(JSON.parse(data))
+				const validCoupons = this.validCoupons(data)
 				this.coupons = validCoupons;
 				localStorage.setItem('superCoupons', JSON.stringify({
 					coupons: validCoupons,
