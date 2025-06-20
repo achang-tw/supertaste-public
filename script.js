@@ -32,7 +32,6 @@ const SuperCoupon = {
 				visibleElementCount = 0;
 				for(const el of elements) {
 					if(el.checkVisibility()) {
-						console.log('found element', el);
 						visibleElementCount++;
 						if (visibleElementCount === 2) {
 							target = el;
