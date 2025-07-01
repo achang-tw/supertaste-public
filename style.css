@@ -137,6 +137,7 @@
     border: 1px solid #aaa;
     border-radius: 3px;
     padding: 1px 4px;
+	word-break: keep-all;
 }
 
 .supertaste-coupon .coupon-item-info-link a:hover{
