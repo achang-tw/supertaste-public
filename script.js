@@ -24,7 +24,7 @@ const SuperCoupon = {
 
 		var target = document.querySelector(locateClass);
 		if(!target){
-			const targets = ['.post-entry h2', '.article-content h2', 'article h2', '.entry-content h2'];
+			const targets = ['.post-entry h2', '.article-content h2', 'article h2', '.entry-content h2', '.single main h2'];
 
 			var visibleElementCount = 0;
 			for(let i = 0; i < targets.length; i++){
