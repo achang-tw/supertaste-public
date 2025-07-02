@@ -1,6 +1,8 @@
 const SuperCoupon = {
 	coupons: [],
 	loaded: false,
+	couponAPI: 'https://ads.achang.tw/super-coupon/index.php',
+	selectorAPI: 'https://ads.achang.tw/super-coupon/selector-api.php',
 	async init(){
 		if(SuperCoupon.loaded){
 			return;
@@ -23,49 +25,52 @@ const SuperCoupon = {
         let target = null;
         let selectorsToTry = [];
         const fallbackSelectors = ['.post-entry h2', '.article-content h2', 'article h2', '.entry-content h2', '.single main h2'];
+        
+        // ***** 1. 設定預設的目標索引 *****
+        let targetVisibleIndex = 2; // 後備用的預設值
 
         try {
-            // 1. 呼叫新的 selector API
-            const response = await fetch(`https://ads.achang.tw/super-coupon/selector-api.php?domain=${window.location.hostname}`);
+            const response = await fetch(`${this.selectorAPI}?domain=${window.location.hostname}`);
             if (!response.ok) throw new Error('API response not OK');
             const data = await response.json();
 
             if (data.selector) {
-                // 優先使用從 API 取得的 selector
                 selectorsToTry.push(data.selector);
+                // ***** 2. 從 API 回應中取得 visible_index *****
+                // 確保它是大於 0 的數字，否則使用預設值 2
+                if (data.visible_index && data.visible_index > 0) {
+                    targetVisibleIndex = data.visible_index;
+                }
             } else {
-                // 如果 API 回應中沒有 selector，使用後備列表
                 selectorsToTry = fallbackSelectors;
             }
         } catch (error) {
             console.error('Failed to fetch selector from API, using fallback list.', error);
-            // 2. 如果 API 呼叫失敗，使用寫死的後備列表
             selectorsToTry = fallbackSelectors;
         }
 
-		// 3. 使用得到的 selector 列表來尋找目標元素 (邏輯與您原本的相似)
 		for(const selector of selectorsToTry) {
 			const elements = document.querySelectorAll(selector);
-			if (elements.length === 0) continue; // 如果這個 selector 找不到元素，就試下一個
+			if (elements.length === 0) continue;
 
 			let visibleElementCount = 0;
 			for(const el of elements) {
 				if(el.checkVisibility()) {
 					visibleElementCount++;
-					// 您的邏輯是找第二個可見的元素
-					if (visibleElementCount === 2) {
+					// ***** 3. 使用動態的目標索引來比較 *****
+					if (visibleElementCount === targetVisibleIndex) {
 						target = el;
-						break; // 找到目標，跳出內層迴圈
+						break;
 					}
 				}
 			}
-			// 如果在內層迴圈找到了目標，也跳出外層迴圈
-			if(target) break;
-
-            // 如果只找到一個可見的元素，就用那一個
-            if (!target && elements.length > 0 && elements[0].checkVisibility()) {
+			
+            // 如果 API 指定找第 1 個，但上面的迴圈沒找到（例如只有1個元素），這裡補上
+            if (!target && targetVisibleIndex === 1 && elements.length > 0 && elements[0].checkVisibility()) {
                 target = elements[0];
             }
+
+			if(target) break;
 		}
 		
 		if(target){
@@ -120,7 +125,7 @@ const SuperCoupon = {
 			this.coupons = this.validCoupons(storedData.coupons);
 			this.drawHTML();
 		}else{
-			fetch('https://ads.achang.tw/super-coupon/index.php') // <--- 請將此處換成您實際的 PHP 檔案網址
+			fetch(this.couponAPI) // <--- 請將此處換成您實際的 PHP 檔案網址
 				.then(res => res.json())
 				.then(data => {
 					// 將從後端拿到的原始資料存入快取
@@ -237,7 +242,25 @@ const SuperCoupon = {
 		}
 	},
 	loadFont(){
-		// ... 此函式維持不變 ...
+		if(!window.WebFont){
+			const webfont = document.createElement('script');
+			webfont.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			document.body.appendChild(webfont);
+
+			webfont.onload = async () => {
+				WebFont.load({
+					google: {
+						families: ['Noto Sans TC:400,500,700']
+					}
+				});
+			}
+		}else{
+			WebFont.load({
+				google: {
+					families: ['Noto Sans TC:400,500,700']
+				}
+			});
+		}
 	},
 	collapse(){
 		const coupon = document.querySelector('.supertaste-coupon');
