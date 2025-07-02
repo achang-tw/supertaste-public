@@ -68,7 +68,7 @@ const SuperCoupon = {
 
 		link.rel = 'stylesheet';
 		link.type = 'text/css';
-		link.href = 'https://linsly-achang.github.io/supertaste-public/style.css';
+		link.href = 'https://achang-tw.github.io/supertaste-public/style.min.css';
 
 		document.head.appendChild(link);
 	},
@@ -148,7 +148,7 @@ const SuperCoupon = {
 												<div class="coupon-item-content-wrap">
 													<div class="coupon-item-title">${coupon.title}</div>
 													<div class="coupon-item-info">
-														<img class="location-icon" src="https://linsly-achang.github.io/supertaste-public/location.svg" />
+														<img class="location-icon" src="https://achang-tw.github.io/supertaste-public/location.svg" />
 														<span>${coupon.title_info}</span>
 													</div>
 													<div class="cta-title">${coupon.cta_title}</div>` +
@@ -159,8 +159,8 @@ const SuperCoupon = {
 												<div class="cta-wrap">
 													<div class="coupon-item-logo">
 														<picture>
-															<source srcset="https://linsly-achang.github.io/supertaste-public/coupon-icon-mo.jpg" media="(max-width: 768px)">
-															<img src="https://linsly-achang.github.io/supertaste-public/coupon-icon-pc.jpg" alt="">
+															<source srcset="https://achang-tw.github.io/supertaste-public/coupon-icon-mo.jpg" media="(max-width: 768px)">
+															<img src="https://achang-tw.github.io/supertaste-public/coupon-icon-pc.jpg" alt="">
 														</picture>
 													</div>
 													<div class="cta-title">${coupon.cta_title}</div>
@@ -178,7 +178,7 @@ const SuperCoupon = {
 										</div>
 										<div class="coupon-item-bg">
 											<picture>
-												<img src="https://linsly-achang.github.io/supertaste-public/bg-pc.svg" alt="">
+												<img src="https://achang-tw.github.io/supertaste-public/bg-pc.svg" alt="">
 											</picture>
 										</div>
 									</div>
@@ -197,7 +197,7 @@ const SuperCoupon = {
 										</div>
 										<div class="coupon-item-bg">
 											<picture>
-												<img src="https://linsly-achang.github.io/supertaste-public/bg-pc.svg" alt="">
+												<img src="https://achang-tw.github.io/supertaste-public/bg-pc.svg" alt="">
 											</picture>
 										</div>
 									</div>
