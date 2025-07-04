@@ -24,7 +24,7 @@ const SuperCoupon = {
 	async addBaseElement(){
         let target = null;
         let selectorsToTry = [];
-        const fallbackSelectors = ['.post-entry h2', '.article-content h2', 'article h2', '.entry-content h2', '.single main h2'];
+        const fallbackSelectors = ['.single .post-entry h2', '.single .article-content h2', '.single article h2', '.single .entry-content h2', '.single main h2'];
         
         // ***** 1. 設定預設的目標索引 *****
         let targetVisibleIndex = 2; // 後備用的預設值
