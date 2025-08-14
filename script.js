@@ -14,7 +14,6 @@ const SuperCoupon = {
 	 * 初始化腳本，確保只執行一次。
 	 */
 	async init() {
-		// ***** 核心修改之處 *****
 		// 檢查是否已執行過，如果已執行，則直接返回。
 		if (SuperCoupon.loaded) {
 			return;
@@ -32,7 +31,6 @@ const SuperCoupon = {
 			await this.loadStyles();
 			await this.loadCoupons();
 			this.loadFont();
-			// 注意：因為在函式開頭已經設定，這裡不再需要 this.loaded = true;
 		} catch (e) {
 			console.error('Failed to initialize SuperCoupon!', e);
 			// (可選) 如果初始化失敗，可以考慮將 loaded 設回 false，以便下次事件觸發時能重試。
@@ -41,9 +39,23 @@ const SuperCoupon = {
 	},
 
 	/**
-	 * 從選擇器 API 取得放置規則，並在頁面上尋找目標元素。
+	 * 尋找並插入優惠券元素。
+	 * 優先使用手動指定的容器，否則自動尋找位置。
 	 */
 	async addBaseElement() {
+		// ***** 核心修改之處 *****
+		// 1. 優先尋找手動指定的容器
+		const customContainer = document.querySelector('.supertaste-coupon-container');
+
+		if (customContainer) {
+			console.log('Custom container found. Inserting SuperCoupon element.');
+			// 如果找到容器，直接將優惠券插入其中並結束函式。
+			const couponElement = await this.baseElement();
+			customContainer.appendChild(couponElement);
+			return; // 提前結束，不執行後續的自動尋找邏輯
+		}
+
+		// 2. 如果沒有找到手動容器，才執行原有的自動尋找邏輯
 		let target = null;
 		let selectorsToTry = [];
 		const fallbackSelectors = ['.single .post-entry h2', '.single .article-content h2', '.single article h2', '.single .entry-content h2', '.single main h2'];
@@ -101,8 +113,6 @@ const SuperCoupon = {
 			}
 		}
 	},
-
-	// ... (其他所有函式，如 baseElement, loadStyles, pickCoupons 等，都維持不變) ...
 	
 	async baseElement() {
 		const base = document.createElement('div');
