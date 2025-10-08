@@ -9,6 +9,7 @@
 	font-size: 14px !important;
 	line-height: 1.5;
 	overflow: hidden;
+	white-space: initial;
 }
 .supertaste-coupon *{
 	margin: 0;
