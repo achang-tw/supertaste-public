@@ -58,7 +58,16 @@ const SuperCoupon = {
 		// 2. 如果沒有找到手動容器，才執行原有的自動尋找邏輯
 		let target = null;
 		let selectorsToTry = [];
-		const fallbackSelectors = ['.single .post-entry h2', '.single .article-content h2', '.single .post-content h2', '.single article h2', '.single .entry-content h2', '.single main h2'];
+		const fallbackSelectors = [
+			'.single .post-entry h2', 
+			'.single .article-content h2', 
+			'#article-main .article-content h2',
+			'.single .post-content h2', 
+			'.single article h2', 
+			'.single .entry-content h2', 
+			'.single main h2',
+			'#aritcle-main #content h2'
+		];
 		let targetVisibleIndex = 2;
 		let placement = 'before';
 
